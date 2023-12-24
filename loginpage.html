@@ -3,6 +3,7 @@
         <meta charset="utf-8">
         <Title>Login</Title>
         <link rel="stylesheet" type="text/css" href="./css/login.css">
+        <script type="text/javascript" src="./js/loginscript.js"></script>
     </head>
 
     <body>
@@ -13,10 +14,10 @@
         <section>
             <div id="container">
                 <div id="image-container">
-                    <img src="pawlogo" alt="paw logo">
+                    
                 </div>
                 
-                <form action="home.html">
+                <form method="post" action="home.html">
                     <div>
                         <p>Nome:</p>
                         <p><input id="txt_nome" type="text"/></p>
@@ -25,7 +26,7 @@
                         <p>Password:</p>
                         <p><input id="txt_pass" type="password"/></p>
                     </div>
-                        <p><input id="btn_login" type="submit" value="Fazer Login"/></p>   
+                        <p><input type="submit" id="btn_login" onclick="return login()" value="Fazer Login"></p>   
                 </form>
             </div>
         </section>
