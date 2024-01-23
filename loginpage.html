@@ -6,7 +6,7 @@
         <script type="text/javascript" src="./js/loginscript.js"></script>
     </head>
 
-    <body>
+    <body onload="init()">
         <header>
             <h1>Login</h1>
         </header>
@@ -16,8 +16,8 @@
                 <div id="image-container">
                     
                 </div>
-                
-                <form method="post" action="home.html">
+            
+                <form id="form_login">
                     <div>
                         <p>Nome:</p>
                         <p><input id="txt_nome" type="text"/></p>
@@ -26,7 +26,7 @@
                         <p>Password:</p>
                         <p><input id="txt_pass" type="password"/></p>
                     </div>
-                        <p><input type="submit" id="btn_login" onclick="return login()" value="Fazer Login"></p>   
+                        <p><input type="submit" id="btn_login" onclick="login()" value="Fazer Login"></p>   
                 </form>
             </div>
         </section>

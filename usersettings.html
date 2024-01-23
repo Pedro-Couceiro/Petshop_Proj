@@ -4,9 +4,10 @@
         <meta charset="utf-8">
         <Title>User Settings</Title>
         <link rel="stylesheet" type="text/css" href="./css/login.css">
+        <script src="./js/usersettings.js"></script>
     </head>
 
-    <body>
+    <body onload="init()">
         <header>
             <h1>Your Profile</h1>
         </header>
@@ -41,7 +42,7 @@
                     <img src="pfp.png" alt="Profile Picture">
                 </div>
                
-                <form method="get">
+                <form>
                     <div>
                         <p>Nome: </p>
                         <p><input id="txt_nome" type="text"></p>
@@ -52,7 +53,7 @@
                         <p><input id="txt_pass" type="password"></p>
                     </div>
 
-                    <p><input type="submit" id="btn_change"></p>
+                    <p><input type="button" id="btn_change" onclick="changeUser()" value="Confirmar Mudanças"></p>
                 </form>
             </div>
         </section>

@@ -5,13 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <Title>Home Page</Title>
         <link rel="stylesheet" href="./css/home.css">
+        <script src="./js/gamescript.js"></script>
     </head>
 
-    <body>
+    <body onload="init()">
         <nav>
             <div id="cabecalho">
                 <div class="nav-item"> 
-                    <p> <a href="usersettings.html"> User Settings </a> </p>
+                    <p> <a href="usersettings.html"> <span id="txt_username"> </span> </a></p>
                 </div>
 
                 <div class="nav-item">
@@ -37,6 +38,15 @@
 
             </div>
         </header>
+
+        <section>
+            <div id="zona_jogo">
+                <div id="zona_balcao">
+
+            
+                </div>
+            </div>
+        </section>
 
         <footer>
             <p>Jogo feito por Pedro Couceiro</p>
