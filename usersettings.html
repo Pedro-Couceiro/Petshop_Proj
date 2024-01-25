@@ -3,43 +3,38 @@
     <head>
         <meta charset="utf-8">
         <Title>User Settings</Title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="stylesheet" type="text/css" href="./css/login.css">
         <script src="./js/usersettings.js"></script>
     </head>
 
     <body onload="init()">
-        <header>
-            <h1>Your Profile</h1>
-        </header>
 
         <nav>
             <div id="cabecalho">
+                <div class="nav-item">
+                    <p> <span id="HorasSpan"></span></p>
+                </div>
+
                 <div class="nav-item"> 
-                    <p> User Settings </p>
+                    <p class="active"> <span id="txt_username"> </span> </p>
                 </div>
 
                 <div class="nav-item">
                     <p> <a href="home.html"> Home </a> </p>
                 </div>
                 
-                <div class="nav-item">
-                    <p>Dinheiro dia</p>
-                </div>
-                
-                <div class="nav-item">
-                    <p>Dinheiro Total</p>
-                </div>
-                
-                <div class="nav-item">
-                    <p>Tempo</p>
-                </div>
             </div>
         </nav>
+
+        <header>
+            <h1>Your Profile</h1>
+        </header>
 
         <section>
             <div id="container">
                 <div id="image-container">
-                    <img src="pfp.png" alt="Profile Picture">
+                    <img src="./images/userIcon.png" alt="Profile Picture">
                 </div>
                
                 <form>

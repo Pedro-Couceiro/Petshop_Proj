@@ -1,57 +1,167 @@
-html
-{
-    font-family:Verdana;
+html {
+    font-family: Verdana;
 }
 
-body
-{
+body {
     background-image: url('../images/paw-background.jpg');
-    background-size:cover;
-    background-repeat:no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-#cabecalho
-{   
-    display:flex;
-    flex-direction:row;    
+#cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.nav-item {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: white;
+    color: black;
+    padding-left:10px;
+    padding-right:10px;
+    margin-right:10px;
+    border: 1px solid black;
+}
+
+.nav-item a {
+    color: cadetblue;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    color: cadetblue;
+    font-weight: bold;
+}
+
+.nav-money-hoje {
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-left:10px;
+    padding-right:10px;
+    margin-left: 10px;
+    margin-right:4px;
+}
+
+.nav-money {
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-left:10px;    
+    padding-right:10px;
+}
+
+.active {
+    color: cadetblue;
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+}
+
+header {
+    background-color: white;
+    display: flex;
     justify-content: center;
 }
 
-.nav-item
-{
-    color:white;
-    padding-left:15px;
-    padding-right:15px;
+
+#TimeContainer {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid black;
 }
 
-.nav-item a
-{
-    color:white;
-    text-decoration:none;
+#zona_jogo {
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding-top:20px;
 }
 
-.nav-item a:hover
-{
-    color:cadetblue;
-    font-weight:bold;
+#zona_balcao {
+    display: flex;
+    align-self: flex-end;
+    justify-self: flex-start;
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    margin-right: 150px;
 }
 
-footer
-{
-    display:flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    color:white;   
+#zona_balcao button {
+    height: 150px;
+    width: 150px;
 }
 
-header
-{
-    background-color:white;
-    display:flex;
-    justify-content:center;
+#zona_balcao button img {
+    vertical-align: middle;
+    height: 120px;
+    width: 120px;
+
 }
 
-@media screen and (min-width:700px)
-{
+#zona_alimentacao {
+    display: flex;
+    align-self: flex-start;
+    justify-self: flex-start;
+    border: 1px solid black;
+    width: 450px;
+}
 
+#zona_animais {
+    display: flex;
+}
+
+#zona_pedidos {
+    display: flex;
+}
+
+@media screen and (min-width:576px) {
+    .nav-item {
+        font-size: medium;
+        padding-left: 40px;
+        padding-right: 40px;
+        margin: 10px;
+    }
+
+    .nav-money-hoje {
+        font-size: medium;
+        background-color: white;
+        border: 1px solid black;
+        padding-left: 30px;
+        padding-right: 40px;
+        margin-left: auto;
+        margin-right: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .nav-money {
+        background-color: white;
+        border: 1px solid black;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #cabecalho
+    {
+        margin-bottom: 30px;
+    }
 }

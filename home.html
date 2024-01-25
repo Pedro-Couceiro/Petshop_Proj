@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <Title>Home Page</Title>
-        <link rel="stylesheet" href="./css/home.css">
-        <script src="./js/gamescript.js"></script>
-    </head>
 
-    <body onload="init()">
-        <nav>
-            <div id="cabecalho">
-                <div class="nav-item"> 
-                    <p> <a href="usersettings.html"> <span id="txt_username"> </span> </a></p>
-                </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title>Home</Title>
+    <link rel="stylesheet" href="./css/home.css">
+    <script src="./js/gamescript.js"></script>
+</head>
 
-                <div class="nav-item">
-                    <p> Home </p>
-                </div>
-                
-                <div class="nav-item">
-                    <p>Dinheiro dia</p>
-                </div>
-                
-                <div class="nav-item">
-                    <p>Dinheiro Total</p>
-                </div>
-                
-                <div class="nav-item">
-                    <p>Tempo</p>
-                </div>
+<body onload="init()">
+    <nav>
+        <div id="cabecalho">
+            <div class="nav-item">
+                <p> <span id="HorasSpan"></span></p>
             </div>
-        </nav>
-        
-        <header>
-            <div>
 
+            <div class="nav-item">
+                <p><a href="usersettings.html"> <span id="txt_username"> </span> </a></p>
             </div>
-        </header>
 
-        <section>
-            <div id="zona_jogo">
-                <div id="zona_balcao">
-
-            
-                </div>
+            <div class="nav-item">
+                <p class="active"> Home</p>
             </div>
-        </section>
 
-        <footer>
-            <p>Jogo feito por Pedro Couceiro</p>
-        </footer>
-    </body>
+            <div class="nav-money-hoje">
+                <p> <span id="dinheiroHoje">€</span></p>
+            </div>
+
+            <div class="nav-money">
+                <p> <span id="dinheiroTotal">€</span></p>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div id="TimeContainer">
+            <p> <span id="gameTime"></span> left</p>
+        </div>
+        <div id="zona_jogo">
+            <div id="zona_balcao">
+                <button id="pedido_btn" onclick="pedidoBalcao()"><img src="./images/balcao.png" /></button>
+            </div>
+            <div id="zona_alimentacao">
+                <button id="btn_racaogato" onclick="getRacao('Gato')">Buscar Ração de Gato</button>
+                <button id="btn_racaocao" onclick="getRacao('Cao')">Buscar Ração de Cão</button>
+                <button id="btn_bird" onclick="getRacao('Passaro')">Buscar Ração de Passaro</button>
+            </div>
+            <div id="zona_animais">
+                <button id="btn_gato" onclick="getAnimal('Gato')">Buscar Gato</button>
+                <button id="btn_cao" onclick="getAnimal('Cao')">Buscar Cão</button>
+                <button id="btn_bird" onclick="getAnimal('Passaro')">Buscar Passaro</button>
+            </div>
+            <div id="zona_alimentar_animais">
+                <button id="btn_feedgato" onclick="feedAnimal('Gato')">Alimentar gato</button>
+                <button id="btn_feedcao" onclick="feedAnimal('Cao')">Alimentar Cao</button>
+                <button id="btn_feedbird" onclick="feedAnimal('Passaro')">Alimentar Passaro</button>
+            </div>
+            <div id="zona_pedidos"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Jogo feito por Pedro Couceiro</p>
+    </footer>
+</body>
+
 </html>
