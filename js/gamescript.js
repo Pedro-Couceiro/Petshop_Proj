@@ -18,9 +18,13 @@ let pedido =
         { "PedidoID": 1, "TipoPedido": "Racao", "TipoAnimal": "Cao", "Imagem": "RacaoCaoImg", "Tempo": 180 },
         { "PedidoID": 2, "TipoPedido": "Racao", "TipoAnimal": "Gato", "Imagem": "RacaoGatoImg", "Tempo": 180 },
         { "PedidoID": 3, "TipoPedido": "Racao", "TipoAnimal": "Passaro", "Imagem": "RacaoPassaroImg", "Tempo": 180 },
-        { "PedidoID": 4, "TipoPedido": "Adotar", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo:": 180 },
-        { "PedidoID": 5, "TipoPedido": "Adotar", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo:": 180 },
-        { "PedidoID": 6, "TipoPedido": "Adotar", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo:": 180 },
+        { "PedidoID": 4, "TipoPedido": "Adotar", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 180 },
+        { "PedidoID": 5, "TipoPedido": "Adotar", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 180 },
+        { "PedidoID": 6, "TipoPedido": "Adotar", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 180 },
+        { "PedidoID": 7, "TipoPedido":"Tosquia", "TipoAnimal": "Cao", "Imagem":"CaoImg", "Tempo":180},
+        { "PedidoID": 8, "TipoPedido":"Tosquia", "TipoAnimal": "Gato", "Imagem":"GatoImg", "Tempo":180},
+        { "PedidoID": 9, "TipoPedido":"Tosquia", "TipoAnimal": "Passaro", "Imagem":"PassaroImg", "Tempo":180},
+        { "PedidoID": 10, "TipoPedido": "Passeio", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 180},
     ]
 
 let resultsdia = { "DinheiroDia": "0", "DinheiroTotal": "0" }
@@ -321,8 +325,8 @@ function pedidoBalcao() {
             alert("Atingiu o limite de pedidos");
         }
         else {
-            //Genera um numero aleatorio entre 1 e 6
-            let pedidoNumber = Math.floor(Math.random() * 6) + 1
+            //Genera um numero aleatorio entre 1 a 10
+            let pedidoNumber = Math.floor(Math.random() * 10) + 1
 
             for (let i = 0; i < pedido.length; i++) {
                 if (pedidoNumber === pedido[i].PedidoID) {

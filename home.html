@@ -6,7 +6,6 @@
         <Title>Home Page</Title>
         <link rel="stylesheet" href="./css/home.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="./js/gamescript.js"></script>
     </head>
@@ -14,6 +13,10 @@
     <body onload="init()">
         <nav>
             <div id="cabecalho">
+                <div class="nav-item">
+                    <p> <span id="HorasSpan"></span></p>
+                </div>
+                
                 <div class="nav-item"> 
                     <p> <a href="usersettings.html"> <span id="txt_username"> </span> </a></p>
                 </div>
@@ -22,15 +25,11 @@
                     <p> Home </p>
                 </div>
                 
-                <div class="nav-item">
+                <div class="nav-money-hoje">
                     <p>Dinheiro dia</p>
                 </div>                
-                <div class="nav-item">
+                <div class="nav-money">
                     <p>Dinheiro Total</p>
-                </div>
-                
-                <div class="nav-item">
-                    <p>Tempo</p>
                 </div>
             </div>
         </nav>
@@ -43,14 +42,18 @@
         
         <section>
 
+            <div id="TimeContainer">
+                <span id="gameTime"></span>
+            </div>
+
             <div id="zona_jogo">
                 <div id="main_zone">
                     <button id="animal_zone_button">Animais</button><br>
                     <button id="balcao_zone_button">Balcao</button><br>
                     <button id="alimentation_zone_button">Alimentacao</button><br> 
-
                 </div>
-                <div id="zona_animals"class="animal_zone">
+
+                <div id="zona_animals" class="animal_zone">
                     <h1>Dogs</h1>
                     <div id="dogs_container">
                         
