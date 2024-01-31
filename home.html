@@ -1,69 +1,104 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <Title>Home Page</Title>
+        <link rel="stylesheet" href="./css/home.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <Title>Home</Title>
-    <link rel="stylesheet" href="./css/home.css">
-    <script src="./js/gamescript.js"></script>
-</head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="./js/gamescript.js"></script>
+    </head>
 
-<body onload="init()">
-    <nav>
-        <div id="cabecalho">
-            <div class="nav-item">
-                <p> <span id="HorasSpan"></span></p>
-            </div>
+    <body onload="init()">
+        <nav>
+            <div id="cabecalho">
+                <div class="nav-item"> 
+                    <p> <a href="usersettings.html"> <span id="txt_username"> </span> </a></p>
+                </div>
 
-            <div class="nav-item">
-                <p><a href="usersettings.html"> <span id="txt_username"> </span> </a></p>
+                <div class="nav-item">
+                    <p> Home </p>
+                </div>
+                
+                <div class="nav-item">
+                    <p>Dinheiro dia</p>
+                </div>                
+                <div class="nav-item">
+                    <p>Dinheiro Total</p>
+                </div>
+                
+                <div class="nav-item">
+                    <p>Tempo</p>
+                </div>
             </div>
+        </nav>
+        
+        <header>
+            <div>
 
-            <div class="nav-item">
-                <p class="active"> Home</p>
             </div>
+        </header>
+        
+        <section>
 
-            <div class="nav-money-hoje">
-                <p> <span id="dinheiroHoje">€</span></p>
-            </div>
+            <div id="zona_jogo">
+                <div id="main_zone">
+                    <button id="animal_zone_button">Animais</button><br>
+                    <button id="balcao_zone_button">Balcao</button><br>
+                    <button id="alimentation_zone_button">Alimentacao</button><br> 
 
-            <div class="nav-money">
-                <p> <span id="dinheiroTotal">€</span></p>
-            </div>
-        </div>
-    </nav>
+                </div>
+                <div id="zona_animals"class="animal_zone">
+                    <h1>Dogs</h1>
+                    <div id="dogs_container">
+                        
+                    </div>
+                    <h1>Cats</h1>
+                    <div id="cats_container">
+                          
+                    </div>
+                    <h1>Birds</h1>
+                    <div id="birds_container">
+                        
+                    </div>
+                    <br>
+                    <br>
+                    <button id="add_dog" onclick="getAnimal('Cao')">Adicionar Cão</button>
+                    <button id="add_cat" onclick="getAnimal('Gato')">Adicionar Gato</button>
+                    <button id="add_bird" onclick="getAnimal('Passaro')">Adicionar Pássaro</button><br><br>
+                    <button id="animal_back" class="voltar_main">voltar</button> 
+                </div>
+                
+                <div id="zona_balcao">
+                    
+                </div>
+                <div id="zona_alimentacao" class="alimentation_zone">
 
-    <section>
-        <div id="TimeContainer">
-            <p> <span id="gameTime"></span> left</p>
-        </div>
-        <div id="zona_jogo">
-            <div id="zona_balcao">
-                <button id="pedido_btn" onclick="pedidoBalcao()"><img src="./images/balcao.png" /></button>
+                    <h1>Comida de Cão</h1>
+                    <img src="./images/RacaoCaoImg.png">
+                    <p id="dogfood_quantity">Quantidade: </p>
+                    <button onclick="getRacao('Cao')">Encomendar</button>
+                    <br><br>
+                    <h1>Comida de Gato</h1>
+                    <img src="./images/RacaoGatoImg.png">
+                    <p id="catfood_quantity">Quantidade: </p>
+                    <button onclick="getRacao('Gato')">Encomendar</button>
+                    <br><br>
+                    <h1>Comida de Passaro</h1>
+                    <img src="./images/RacaoPassaroImg.png">
+                    <p id="birdfood_quantity">Quantidade: </p>
+                    <button onclick="getRacao('Passaro')">Encomendar</button>
+                    <br><br>
+                    <button class="alimentation_back"></button>
+                    
+                </div>
             </div>
-            <div id="zona_alimentacao">
-                <button id="btn_racaogato" onclick="getRacao('Gato')">Buscar Ração de Gato</button>
-                <button id="btn_racaocao" onclick="getRacao('Cao')">Buscar Ração de Cão</button>
-                <button id="btn_bird" onclick="getRacao('Passaro')">Buscar Ração de Passaro</button>
-            </div>
-            <div id="zona_animais">
-                <button id="btn_gato" onclick="getAnimal('Gato')">Buscar Gato</button>
-                <button id="btn_cao" onclick="getAnimal('Cao')">Buscar Cão</button>
-                <button id="btn_bird" onclick="getAnimal('Passaro')">Buscar Passaro</button>
-            </div>
-            <div id="zona_alimentar_animais">
-                <button id="btn_feedgato" onclick="feedAnimal('Gato')">Alimentar gato</button>
-                <button id="btn_feedcao" onclick="feedAnimal('Cao')">Alimentar Cao</button>
-                <button id="btn_feedbird" onclick="feedAnimal('Passaro')">Alimentar Passaro</button>
-            </div>
-            <div id="zona_pedidos"></div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>Jogo feito por Pedro Couceiro</p>
-    </footer>
-</body>
-
+        <footer>
+            <p>Jogo feito por Pedro Couceiro</p>
+        </footer>
+    </script>
 </html>

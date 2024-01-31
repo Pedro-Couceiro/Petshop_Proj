@@ -199,11 +199,18 @@ function pedidoBalcao() {
 
 function getRacao(RacaoItem) {
     let i;
-
+    
     for (i = 0; i < racaolist.length; i++) {
         if (RacaoItem === racaolist[i].Tipo) {
             racaolist[i].Quantidade = racaolist[i].Quantidade + 1;
             racaolist[i].Check = true;
+            if(RacaoItem==="Cao"){
+                document.getElementById("dogfood_quantity").textContent = "Quantidade: " + racaolist[i].Quantidade;
+            }else if(RacaoItem === "Gato"){
+                document.getElementById("catfood_quantity").textContent = "Quantidade: " + racaolist[i].Quantidade;
+            }else if(RacaoItem === "Passaro"){
+                document.getElementById("birdfood_quantity").textContent = "Quantidade: " + racaolist[i].Quantidade;
+            }
 
             break;
         }
@@ -213,17 +220,124 @@ function getRacao(RacaoItem) {
 
 function getAnimal(Animal) {
     let i;
-
+    
     for (i = 0; i < animallist.length; i++) {
         if (Animal === animallist[i].Tipo) {
             animallist[i].Quantidade = animallist[i].Quantidade + 1;
             animallist[i].Check = true;
-
             break;
         }
     }
+    if(Animal=== "Cao"){
+        createDogDiv();
+    }
+    else if(Animal === "Gato"){
+        createCatDiv();
+    }else if(Animal=== "Passaro"){
+        createBirdDiv();
+    }
     console.log("Tens " + animallist[i].Quantidade + " " + animallist[i].Tipo);
 }
+
+function createDogDiv() {
+    // Create the main div with id "Dog_box"
+    var dogBox = document.createElement('div');
+    dogBox.id = 'Dog_box';
+
+    // Create the image element
+    var dogImage = document.createElement('img');
+    dogImage.src = './images/DogImg.png';
+    dogImage.id = 'dog_image';
+
+    // Create the inner div with class "w3_border"
+    var innerDiv = document.createElement('div');
+    innerDiv.className = 'w3_border';
+
+    // Create the button and the div with class "w3-yellow"
+    var button = document.createElement('button');
+    button.textContent = 'alimentar';
+    button.onclick = function() {
+      feedAnimal('Cao');
+    };
+
+    var yellowDiv = document.createElement('div');
+    yellowDiv.className = 'w3-yellow';
+    yellowDiv.style.height = '24px';
+    yellowDiv.style.width = '20%';
+
+    // Append elements to their respective parent divs
+    innerDiv.appendChild(button);
+    innerDiv.appendChild(yellowDiv);
+
+    dogBox.appendChild(dogImage);
+    dogBox.appendChild(innerDiv);
+
+    // Append the main div to the container div with id "dogs_container"
+    document.getElementById('dogs_container').appendChild(dogBox);
+  }
+  function createCatDiv(){
+
+    var catBox = document.createElement('div');
+    catBox.id = 'Cat_box';
+
+    var catImage = document.createElement('img');
+    catImage.src = './images/CatImg.png';
+    catImage.id = 'cat_image';
+
+    var innerDiv = document.createElement('div');
+    innerDiv.className = 'w3_border';
+
+    var button = document.createElement('button');
+    button.textContent = 'alimentar';
+    button.onclick = function() {
+      feedAnimal('Gato');
+    };
+
+    var yellowDiv = document.createElement('div');
+    yellowDiv.className = 'w3-yellow';
+    yellowDiv.style.height = '24px';
+    yellowDiv.style.width = '20%';
+
+    innerDiv.appendChild(button);
+    innerDiv.appendChild(yellowDiv);
+
+    catBox.appendChild(catImage);
+    catBox.appendChild(innerDiv);
+
+    document.getElementById('cats_container').appendChild(catBox);
+  }
+
+  function createBirdDiv(){
+
+    var birdBox = document.createElement('div');
+    birdBox.id = 'Bird_box';
+
+    var birdImage = document.createElement('img');
+    birdImage.src = './images/BirdImg.png';
+    birdImage.id = 'bird_image';
+
+    var innerDiv = document.createElement('div');
+    innerDiv.className = 'w3_border';
+
+    var button = document.createElement('button');
+    button.textContent = 'alimentar';
+    button.onclick = function() {
+      feedAnimal('Passaro');
+    };
+
+    var yellowDiv = document.createElement('div');
+    yellowDiv.className = 'w3-yellow';
+    yellowDiv.style.height = '24px';
+    yellowDiv.style.width = '20%';
+
+    innerDiv.appendChild(button);
+    innerDiv.appendChild(yellowDiv);
+
+    birdBox.appendChild(birdImage);
+    birdBox.appendChild(innerDiv);
+
+    document.getElementById('birds_container').appendChild(birdBox);
+  }
 
 function giveOrder(TipoPedido, Animal) {
     let i;
@@ -358,3 +472,54 @@ function AnimalHunger()
         }, 
     1000);
 }
+
+// scripts that use jQuery
+$(document).ready(function(){
+
+    // at the start it apears the main menu div
+    $("#zona_balcao").hide();
+    $("#zona_animals").hide();
+    $("#zona_alimentacao").hide();
+
+    $("#animal_zone_button").click(function() {
+        
+        $("#main_zone").hide();
+        $("#zona_animals").show();
+
+    });
+
+    $("#balcao_zone_button").click(function() {
+        
+        $(this).hide();
+        $("#main_zone").hide();
+        $("#zona_balcao").show();
+        
+    });
+
+    $("#alimentation_zone_button").click(function() {
+        
+        $(this).hide();
+        $("#main_zone").hide();
+        $("#zona_alimentacao").show();
+
+    });
+
+    $(".voltar_main").click(function() {
+
+
+        $(this).parent(".animal_zone").hide();
+
+        $("#main_zone").show();
+
+    });
+
+    $(".alimentation_back").click(function() {
+
+        $(this).parent(".alilmentation_zone")
+        $("#")
+
+    });
+
+    
+});
+                

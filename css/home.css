@@ -115,13 +115,12 @@ header {
 
 }
 
-#zona_alimentacao {
+/* #zona_alimentacao {
     display: flex;
     align-self: flex-start;
     justify-self: flex-start;
-    border: 1px solid black;
     width: 450px;
-}
+}  */
 
 #zona_animais {
     display: flex;
@@ -164,4 +163,11 @@ header {
     {
         margin-bottom: 30px;
     }
+
+}
+#dog_image,#cat_image,#bird_image{
+        
+    width: 20%;
+    height: 20%;
+    
 }
