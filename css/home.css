@@ -85,6 +85,11 @@ header {
     border: 1px solid black;
 }
 
+#gameTime
+{
+    padding: 20px;
+}
+
 #zona_jogo {
     background-color: white;
     border: 1px solid black;
@@ -93,26 +98,39 @@ header {
     padding-top:20px;
 }
 
+#main_zone
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main_zone button
+{
+    margin-right: 8px;
+    margin-left: 5px;
+    margin-bottom: 15px;
+    padding: 10px 13px;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+}
+
 #zona_balcao {
-    display: flex;
-    align-self: flex-end;
-    justify-self: flex-start;
-    border: 1px solid black;
-    height: 150px;
-    width: 150px;
-    margin-right: 150px;
+    margin-left:15px;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 #zona_balcao button {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
 }
 
 #zona_balcao button img {
     vertical-align: middle;
-    height: 120px;
-    width: 120px;
-
+    height: 170px;
+    width: 170px;
 }
 
 /* #zona_alimentacao {
@@ -124,10 +142,19 @@ header {
 
 #zona_animais {
     display: flex;
+    justify-content: flex-end;
 }
 
 #zona_pedidos {
+    border:1px solid black;
     display: flex;
+    flex-direction: column;
+}
+
+#zona_pedidos button img
+{
+    width: 20%;
+    height: 20%;
 }
 
 @media screen and (min-width:576px) {

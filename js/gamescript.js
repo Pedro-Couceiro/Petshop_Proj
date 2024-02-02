@@ -1,16 +1,28 @@
 //Dictionary Variables
 let animallist =
     [
-        { "Tipo": "Gato", "Quantidade": 10, "Dinheiro": 150, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 300, "Check": false },
-        { "Tipo": "Cao", "Quantidade": 10, "Dinheiro": 150, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 300, "Check": false },
-        { "Tipo": "Passaro", "Quantidade": 10, "Dinheiro": 150, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 300, "Check": false },
+        { "Tipo": "Gato", "Quantidade": 10, "Dinheiro": 150, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 300, "Check": true },
+        { "Tipo": "Cao", "Quantidade": 10, "Dinheiro": 150, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 300, "Check": true },
+        { "Tipo": "Passaro", "Quantidade": 10, "Dinheiro": 150, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 300, "Check": true },
     ]
 
 let racaolist =
     [
-        { "Tipo": "Gato", "Quantidade": 10, "Dinheiro": 30, "TaskTime": 30, "Check": false },
-        { "Tipo": "Cao", "Quantidade": 10, "Dinheiro": 30, "TaskTime": 30, "Check": false },
-        { "Tipo": "Passaro", "Quantidade": 10, "Dinheiro": 30, "TaskTime": 30, "Check": false },
+        { "Tipo": "Gato", "Quantidade": 10, "Dinheiro": 30, "TaskTime": 30, "Check": true },
+        { "Tipo": "Cao", "Quantidade": 10, "Dinheiro": 30, "TaskTime": 30, "Check": true },
+        { "Tipo": "Passaro", "Quantidade": 10, "Dinheiro": 30, "TaskTime": 30, "Check": true },
+    ]
+
+let tosquiaStatus =
+    [
+        { "TipoAnimal": "Gato", "TaskTime": 30, "Dinheiro": 70, "Check": false },
+        { "TipoAnimal": "Cao", "TaskTime": 30, "Dinheiro": 70, "Check": false },
+        { "TipoAnimal": "Passaro", "TaskTime": 30, "Dinheiro": 70, "Check": false },
+    ]
+
+let passeioStatus =
+    [
+        { "TipoAnimal": "Cao", "TaskTime": 30, "Dinheiro": 70, "Check": false },
     ]
 
 let pedido =
@@ -18,16 +30,28 @@ let pedido =
         { "PedidoID": 1, "TipoPedido": "Racao", "TipoAnimal": "Cao", "Imagem": "RacaoCaoImg", "Tempo": 180 },
         { "PedidoID": 2, "TipoPedido": "Racao", "TipoAnimal": "Gato", "Imagem": "RacaoGatoImg", "Tempo": 180 },
         { "PedidoID": 3, "TipoPedido": "Racao", "TipoAnimal": "Passaro", "Imagem": "RacaoPassaroImg", "Tempo": 180 },
-        { "PedidoID": 4, "TipoPedido": "Adotar", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 180 },
-        { "PedidoID": 5, "TipoPedido": "Adotar", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 180 },
-        { "PedidoID": 6, "TipoPedido": "Adotar", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 180 },
-        { "PedidoID": 7, "TipoPedido":"Tosquia", "TipoAnimal": "Cao", "Imagem":"CaoImg", "Tempo":180},
-        { "PedidoID": 8, "TipoPedido":"Tosquia", "TipoAnimal": "Gato", "Imagem":"GatoImg", "Tempo":180},
-        { "PedidoID": 9, "TipoPedido":"Tosquia", "TipoAnimal": "Passaro", "Imagem":"PassaroImg", "Tempo":180},
-        { "PedidoID": 10, "TipoPedido": "Passeio", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 180},
+        { "PedidoID": 4, "TipoPedido": "Animal", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 180 },
+        { "PedidoID": 5, "TipoPedido": "Animal", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 180 },
+        { "PedidoID": 6, "TipoPedido": "Animal", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 180 },
+        { "PedidoID": 7, "TipoPedido": "TosquiaCao", "TipoAnimal": "Cao", "Imagem": "CaoImg", "Tempo": 180 },
+        { "PedidoID": 8, "TipoPedido": "TosquiaGato", "TipoAnimal": "Gato", "Imagem": "GatoImg", "Tempo": 180 },
+        { "PedidoID": 9, "TipoPedido": "TosquiaPassaro", "TipoAnimal": "Passaro", "Imagem": "PassaroImg", "Tempo": 180 },
+        { "PedidoID": 10, "TipoPedido": "PasseioCao", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 180 },
+    ]
+
+let inventory =
+    [
+        { "Tipo": "Animal", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
+        { "Tipo": "Animal", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
+        { "Tipo": "Animal", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
+        { "Tipo": "Racao", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 30, "HasCheck": false },
+        { "Tipo": "Racao", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 30, "HasCheck": false },
+        { "Tipo": "Racao", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 30, "HasCheck": false },
     ]
 
 let resultsdia = { "DinheiroDia": "0", "DinheiroTotal": "0" }
+
+let queuelist = []
 
 let countDownTime = 600;
 let countDownPedido;
@@ -38,6 +62,7 @@ let a = 0;
 
 //Functions começam aqui
 
+//Função de iniciação que começa no onload,
 function init() {
     console.log("test");
 
@@ -45,11 +70,57 @@ function init() {
 
     ShopTimer(countDownTime);
 
+    checkQuantities();
+
     AnimalFome();
 
     getUserLocal();
 
     getMoneyLocal();
+
+    let animaisDiv = document.getElementById("zona_animals");
+    let balcaoDiv = document.getElementById("zona_balcao");
+    let racaoDiv = document.getElementById("zona_alimentacao");
+    let tosquiaDiv = document.getElementById("zona_tosquias");
+
+    animaisDiv.style.display = 'none';
+    balcaoDiv.style.display = 'none';
+    racaoDiv.style.display = 'none';
+    tosquiaDiv.style.display = 'none';
+}
+
+function OpenZona(zona) {
+    let animaisDiv = document.getElementById("zona_animals");
+    let balcaoDiv = document.getElementById("zona_balcao");
+    let racaoDiv = document.getElementById("zona_alimentacao");
+    let tosquiaDiv = document.getElementById("zona_tosquias");
+
+    if (zona === 'Animais') {
+        animaisDiv.style.display = 'block';
+        balcaoDiv.style.display = 'none';
+        racaoDiv.style.display = 'none';
+        tosquiaDiv.style.display = 'none';
+    }
+    else if (zona === 'Balcao') {
+        balcaoDiv.style.display = 'block';
+        racaoDiv.style.display = 'none';
+        animaisDiv.style.display = 'none';
+        tosquiaDiv.style.display = 'none';
+    }
+    else if (zona === 'Alimentacao') {
+        racaoDiv.style.display = 'block';
+        balcaoDiv.style.display = 'none';
+        animaisDiv.style.display = 'none';
+        tosquiaDiv.style.display = 'none';
+
+    }
+    else {
+        tosquiaDiv.style.display = 'block';
+        animaisDiv.style.display = 'none';
+        balcaoDiv.style.display = 'none';
+        racaoDiv.style.display = 'none';
+    }
+
 }
 
 function getCurrentTime() {
@@ -74,6 +145,7 @@ function getCurrentTime() {
     let time = hh + ":" + mm + "" + session;
 
     document.getElementById("HorasSpan").textContent = time;
+    //1000 é 1 segundo em millisegundos
     setTimeout(function () { getCurrentTime() }, 1000);
 }
 
@@ -96,9 +168,11 @@ function getUserLocal() {
 function getMoneyLocal() {
     let dinheiroLocalStorage = localStorage.getItem("Dinheiro");
 
+    //Se a local storage do dinheiro não existe ainda
     if (dinheiroLocalStorage === null) {
         console.log("Novo Jogo");
 
+        //JSONstrigification do dicionario resultsdia
         let dinheiroProfile = JSON.stringify(resultsdia);
 
         localStorage.setItem("Dinheiro", dinheiroProfile);
@@ -114,6 +188,7 @@ function getMoneyLocal() {
     }
 }
 
+//Função para o Timer da Petshop
 function ShopTimer() {
     let dinheiroLocalStorage = localStorage.getItem("Dinheiro");
     let dinheiroDicionario = JSON.parse(dinheiroLocalStorage);
@@ -154,47 +229,51 @@ function ShopTimer() {
         }, 1000)
 }
 
-//Função que começa o tempo limite do cliente
-function pedidoTime(tempoLimite, a) {
+//Função que começa o timer para o tempo limite do pedido do cliente
+function pedidoTime() {
 
     let dinheiroLocalStorage = localStorage.getItem("Dinheiro");
     let dinheiroDicionario = JSON.parse(dinheiroLocalStorage);
 
     let zonaPedidosDiv = document.getElementById("zona_pedidos");
 
-    let currentOrder = document.getElementById("pedido" + a);
+    for (let i = 0; i < queuelist[i].length; i++) {
+        console.log(queuelist[i].pedidoNum);
 
-    let tempoCount = tempoLimite;
+        var timer = setInterval(
 
-    var timer = setInterval(
+            function () {
+                queuelist[i].pedidoTime--;
 
-        function () {
+                if (queuelist[i].Check == true) {
+                    console.log("Abort CountDown");
+                    clearInterval(timer);
 
-            tempoCount--;
+                    zonaPedidosDiv.removeChild(queuelist[i].pedidoId);
 
-            if (!zonaPedidosDiv.hasChildNodes()) {
-                console.log("Abort Countdown");
-                clearInterval(timer);
-            }
+                    delete queuelist[i];
+                    queuelist.splice(i, 1);
 
-            if (tempoCount === 0) {
+                }
 
-                clearInterval(timer);
+                if (queuelist[i].pedidoTime === 0) {
 
-                zonaPedidosDiv.removeChild(currentOrder);
+                    clearInterval(timer);
 
-                alert("Oops, não acabaste o pedido a tempo. O cliente saiu insatisfeito.");
+                    
+                    alert("Oops, não acabaste o pedido a tempo. O cliente saiu insatisfeito.");
 
-                dinheiroDicionario.DinheiroDia = racaolist[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
+                    dinheiroDicionario.DinheiroDia = racaolist[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
 
-                resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
+                    resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
 
-                let dinheiroProfile = JSON.stringify(resultsdia);
+                    let dinheiroProfile = JSON.stringify(resultsdia);
 
-                localStorage.setItem("Dinheiro", dinheiroProfile);
-                getMoneyLocal();
-            }
-        }, 1000)
+                    localStorage.setItem("Dinheiro", dinheiroProfile);
+                    getMoneyLocal();
+                }
+            }, 1000)
+    }
 }
 
 //Function para gastar o tempo entre atividades
@@ -210,12 +289,12 @@ function AnimalFome() {
         let dinheiroLocalStorage = localStorage.getItem("Dinheiro");
         let dinheiroDicionario = JSON.parse(dinheiroLocalStorage);
 
-        const timer = setInterval(
-            function () {
-                for (let i = 0; i < animallist.length; i++) {
-                    animallist[i].Hungy = hungerCount--;
+        for (let i = 0; i < animallist.length; i++) {
+            const timer = setInterval(
+                function () {
+                    animallist[i].Hungy--;
 
-                    console.log(animallist[i].Hungy);
+                    console.log(animallist[i].Tipo + ":" + animallist[i].Hungy);
 
                     if (animallist[i].Hungy >= 300) {
                         animallist[i].Hungy = 300;
@@ -239,47 +318,127 @@ function AnimalFome() {
 
                         animallist[i].Hungy = 300;
                     }
-                }
-            },
-            1000);
+                }, 1000);
+        }
     }
 }
 
+function purchaseRacao(TipoRacao) {
+    let i;
+
+    for (i = 0; i < racaolist.length; i++) {
+        if (TipoRacao === racaolist[i].Tipo) {
+            racaolist[i].Quantidade = racaolist[i].Quantidade + 1;
+            if (racaolist[i].Quantidade >= 1) {
+                racaolist[i].Check = true;
+            }
+        }
+    }
+    console.log("Tens " + racaolist[i].Quantidade + " de racao de " + racaolist[i].Tipo);
+
+    checkQuantities();
+}
 
 //Function para buscar a racao de um especifico animal
 function getRacao(RacaoItem) {
-    let i;
-
     if (gameActive) {
-        for (i = 0; i < racaolist.length; i++) {
-            if (RacaoItem === racaolist[i].Tipo) {
-                racaolist[i].Quantidade = racaolist[i].Quantidade + 1;
-                racaolist[i].Check = true;
-                wasteTime(racaolist[i].TaskTime);
+        let i;
+
+        for (i = 0; i < animallist.length; i++) {
+            if (RacaoItem == racaolist[i].Tipo) {
+                racaolist[i].Quantidade = racaolist[i].Quantidade - 1;
+
+                if (racaolist[i].Quantidade == 0) {
+                    wasteTime(racaolist[i].TaskTime);
+                    racaolist[i].Check = false;
+                }
+            }
+        }
+        for (i = 3; i < inventory.length; i++) {
+            if (RacaoItem === inventory[i].TipoAnimal) {
+                inventory[i].Quantidade = inventory[i].Quantidade + 1;
+                inventory[i].HasCheck = true;
 
                 break;
             }
         }
-        console.log("Tens " + racaolist[i].Quantidade + " de racao de " + racaolist[i].Tipo);
+        console.log("Tens " + inventory[i].Quantidade + " de racao de " + inventory[i].Nome);
+
+        checkQuantities();
     }
+}
+
+function checkQuantities() {
+
+    for (let i = 0; i < racaolist.length; i++) {
+        let racaoSpan = document.getElementById("quantComida-" + racaolist[i].Tipo);
+
+        racaoSpan.textContent = racaolist[i].Quantidade;
+    }
+
+    for (let i = 0; i < animallist.length; i++) {
+        let animalSpan = document.getElementById("quantAnimal-" + animallist[i].Tipo);
+
+        animalSpan.textContent = animallist[i].Quantidade;
+    }
+}
+
+function purchaseAnimal(Animal) {
+    for (let i = 0; i < animallist.length; i++) {
+        if (Animal === animallist[i].Tipo) {
+            animallist[i].Quantidade = animallist[i].Quantidade + 1;
+            if (animallist[i].Quantidade >= 1) {
+                animallist[i].Check = true;
+            }
+            break;
+        }
+    }
+    checkQuantities();
 }
 
 //Function para buscar a comida especifica de um animal
 function getAnimal(Animal) {
-    let i;
-
     if (gameActive) {
+        let i
 
         for (i = 0; i < animallist.length; i++) {
-            if (Animal === animallist[i].Tipo) {
-                animallist[i].Quantidade = animallist[i].Quantidade + 1;
-                animallist[i].Check = true;
+            if (Animal == animallist[i].Tipo) {
+                animallist[i].Quantidade = animallist[i].Quantidade - 1;
                 wasteTime(animallist[i].GetTaskTime);
+
+                if (animallist[i].Quantidade == 0) {
+                    animallist[i].Check = false;
+                }
 
                 break;
             }
         }
-        console.log("Tens " + animallist[i].Quantidade + " " + animallist[i].Tipo);
+        for (i = 0; i < inventory.length; i++) {
+            if (Animal == inventory[i].TipoAnimal) {
+                inventory[i].Quantidade = inventory[i].Quantidade + 1;
+                inventory[i].HasCheck = true;
+
+                break;
+            }
+        }
+        console.log("Tens " + inventory[i].Quantidade + " " + inventory[i].TipoAnimal);
+
+        checkQuantities();
+    }
+}
+
+function tosquiarAnimal(Animal) {
+    for (let i = 0; i < tosquiaStatus.length; i++) {
+
+
+    }
+}
+
+function passearAnimal(Animal) {
+    let i;
+
+    for (i = 0; i < passeioStatus.length; i++) {
+
     }
 }
 
@@ -320,137 +479,106 @@ function pedidoBalcao() {
     if (gameActive) {
         //Div exclusivamente para por pedidos la no html
         let zonaPedidosDiv = document.getElementById("zona_pedidos");
+        //Genera um numero aleatorio entre 1 a 6
+        let pedidoNumber = Math.floor(Math.random() * 6) + 1
 
-        if (zonaPedidosDiv.hasChildNodes()) {
-            alert("Atingiu o limite de pedidos");
-        }
-        else {
-            //Genera um numero aleatorio entre 1 a 10
-            let pedidoNumber = Math.floor(Math.random() * 10) + 1
+        for (let i = 0; i < pedido.length; i++) {
+            if (pedidoNumber === pedido[i].PedidoID) {
+                console.log("O cliente pediu por:" + pedido[i].TipoPedido);
 
-            for (let i = 0; i < pedido.length; i++) {
-                if (pedidoNumber === pedido[i].PedidoID) {
-                    console.log("O cliente pediu por:" + pedido[i].TipoPedido);
+                //Cria um buttao, botao tem os parametros do tipo de pedido e tipo de animal
+                let newPedido = document.createElement("Button");
+                newPedido.setAttribute("id", "pedido" + a);
+                newPedido.setAttribute("onclick", "giveOrder('pedido" + a + "','" + pedido[i].TipoPedido + "','" + pedido[i].TipoAnimal + "')");
 
-                    countDownPedido = pedido[i].Tempo;
+                //Imagem vai para dentro do buttao
+                let imgPedido = document.createElement("img");
+                imgPedido.setAttribute("src", "./images/" + pedido[i].Imagem + ".png");
+                imgPedido.setAttribute("alt", pedido[i].Imagem);
 
-                    //Cria um buttao, botao tem os parametros do tipo de pedido e tipo de animal
-                    let newPedido = document.createElement("Button");
-                    newPedido.setAttribute("id", "pedido" + a);
-                    newPedido.setAttribute("onclick", "giveOrder('" + a + "','" + pedido[i].TipoPedido + "', '" + pedido[i].TipoAnimal + "')");
+                zonaPedidosDiv.appendChild(newPedido);
+                newPedido.appendChild(imgPedido);
 
-                    //Imagem vai para dentro do buttao
-                    let imgPedido = document.createElement("img");
-                    imgPedido.setAttribute("src", "./images/" + pedido[i].Imagem + ".png");
-                    imgPedido.setAttribute("alt", pedido[i].Imagem);
+                queuelist.push(
+                    {
+                        "pedidoNum": a,
+                        "pedidoId": "pedido" + a,
+                        "pedidoTime": pedido[i].Tempo,
+                        "Check": false,
+                    }
+                );
+                pedidoTime(countDownPedido);
 
-                    zonaPedidosDiv.appendChild(newPedido);
-                    newPedido.appendChild(imgPedido);
-                    pedidoTime(countDownPedido, a);
+                a++;
 
-                    a++;
-
-                    //Acaba aqui para n fazer asneira
-                    break;
-                }
+                //Acaba aqui para n fazer asneira
+                break;
             }
         }
     }
 }
 
 //Função para dar Order ao Cliente
-function giveOrder(a, TipoPedido, Animal) {
-    if (gameActive) {
-        let dinheiroLocalStorage = localStorage.getItem("Dinheiro");
-        let dinheiroDicionario = JSON.parse(dinheiroLocalStorage);
+function giveOrder(PedidoID, Pedido, Animal) {
+    let dinheiroLocalStorage = localStorage.getItem("Dinheiro");
+    let dinheiroDicionario = JSON.parse(dinheiroLocalStorage);
+    let zonaPedidosDiv = document.getElementById("zona_pedidos");
+    let currentOrder = zonaPedidosDiv.childNodes;
 
-        let zonaPedidosDiv = document.getElementById("zona_pedidos");
-        let currentOrder = document.getElementById("pedido" + a);
+    let a;
+    let i;
 
-        let promptText = "De certeza que quer completar este pedido? Carregue OK se sim, carregue CANCEL se não";
+    let promptText = "De certeza que quer completar este pedido? Carregue OK se sim, carregue CANCEL se não";
 
-        let i;
-
-        if (confirm(promptText)) {
-            //Se o tipo de Pedido e for de adocao
-            if (TipoPedido === 'Adotar') {
-                for (i = 0; i < animallist.length; i++) {
-
-                    //Verifica o tipo de Animal
-                    if (Animal === animallist[i].Tipo) {
-
-                        //Verifica se tem o animal
-                        if (animallist[i].Check == true) {
-                            //Subtrai a quantidade que o jogador tem
-                            animallist[i].Quantidade = animallist[i].Quantidade - 1;
-
-                            //Soma o dinheiro
-                            dinheiroDicionario.DinheiroDia = animallist[i].Dinheiro + parseInt(dinheiroDicionario.DinheiroDia);
-
-                            //Remove o pedido
-                            zonaPedidosDiv.removeChild(currentOrder);
-
-
-                            //Se chegar a quantidade chegar a zero, o check fica falso
-                            if (animallist[i].Quantidade === 0) {
-                                animallist[i].Check = false;
-                            }
-                            console.log("Sucessful Order");
-                            break;
-                        }
-
-                        else {
-                            console.log("Failed Order");
-                            alert("Não tens o pedido do Cliente. O cliente não está satisfeito.");
-
-                            //Subtrai o dinheiro
-                            dinheiroDicionario.DinheiroDia = animallist[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
-                            break;
-                        }
-                    }
-                }
-                console.log("Tens " + animallist[i].Quantidade + " " + animallist[i].Tipo);
-            }
-            //Se o tipo de Pedido e de Racao
-            else {
-                for (i = 0; i < racaolist.length; i++) {
-                    //Verifica o tipo de racao
-                    if (Animal === racaolist[i].Tipo) {
-                        //Verifica se tem mesmo a racao
-                        if (racaolist[i].Check == true) {
-                            //Subtrai a quantidade que o jogador tem
-                            racaolist[i].Quantidade = racaolist[i].Quantidade - 1;
-
-                            dinheiroDicionario.DinheiroDia = racaolist[i].Dinheiro + parseInt(dinheiroDicionario.DinheiroDia);
-
-                            //Remove o pedido
-                            zonaPedidosDiv.removeChild(currentOrder);
-
-                            //Se chegar a quantidade chegar a zero, o check fica falso
-                            if (racaolist[i].Quantidade === 0) {
-                                racaolist[i].Check = false;
-                            }
-                            console.log("Sucessful Order");
-                            break;
-                        }
-                        else {
-                            alert("Não tens o pedido do Cliente");
-                            alert("Não tens o pedido do Cliente. O cliente não está satisfeito.");
-
-                            dinheiroDicionario.DinheiroDia = racaolist[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
-                            break;
-                        }
-                    }
-                }
-                console.log("Tens " + racaolist[i].Quantidade + " de racao de " + racaolist[i].Tipo);
-            }
-            console.log("Dinheiro Recebido: " + dinheiroDicionario.DinheiroDia);
-            resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
-
-            let dinheiroProfile = JSON.stringify(resultsdia);
-
-            localStorage.setItem("Dinheiro", dinheiroProfile);
-            getMoneyLocal();
+    for (a = 0; a < queuelist.length; a++) {
+        if (queuelist[a].pedidoId === PedidoID) {
+            break;
         }
+    }
+
+    if (confirm(promptText)) {
+        for (i = 0; i < inventory.length; i++) {
+            //Verifica o tipo de Animal
+            if (Pedido === inventory[i].Tipo && Animal === inventory[i].TipoAnimal) {
+                //Verifica se tem o animal
+                if (inventory[i].HasCheck == true) {
+                    //Subtrai a quantidade que o jogador tem
+                    inventory[i].Quantidade = inventory[i].Quantidade - 1;
+
+                    //Soma o dinheiro
+                    dinheiroDicionario.DinheiroDia = inventory[i].Dinheiro + parseInt(dinheiroDicionario.DinheiroDia);
+
+                    //Se chegar a quantidade chegar a zero, o check fica falso
+                    if (inventory[i].Quantidade === 0) {
+                        inventory[i].HasCheck = false;
+                    }
+                    console.log("Sucessful Order");
+                    break;
+                }
+                else {
+                    console.log("Failed Order");
+                    alert("Não tens o pedido do Cliente. O cliente não está satisfeito.");
+
+                    //Subtrai o dinheiro
+                    dinheiroDicionario.DinheiroDia = inventory[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
+                    break;
+                }
+            }
+        }
+        console.log("Tens " + inventory[i].Quantidade + " de " + inventory[i].Nome);
+
+        console.log("Dinheiro Recebido: " + dinheiroDicionario.DinheiroDia);
+        resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
+
+        let dinheiroProfile = JSON.stringify(resultsdia);
+
+        localStorage.setItem("Dinheiro", dinheiroProfile);
+        getMoneyLocal();
+
+        //Remove o pedido
+
+        zonaPedidosDiv.removeChild(currentOrder[a]);
+        delete queuelist[a];
+        queuelist.splice(a, 1);
     }
 }
