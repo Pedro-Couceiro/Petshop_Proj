@@ -15,10 +15,17 @@ let racaolist =
 
 let tosquiaStatus =
     [
-        { "TipoAnimal": "Gato", "TaskTime": 30, "Dinheiro": 70, "Check": false },
-        { "TipoAnimal": "Cao", "TaskTime": 30, "Dinheiro": 70, "Check": false },
-        { "TipoAnimal": "Passaro", "TaskTime": 30, "Dinheiro": 70, "Check": false },
+        { "Tipo": "Gato", "TaskTime": 30, "Dinheiro": 70, "Check": false },
+        { "Tipo": "Cao", "TaskTime": 30, "Dinheiro": 70, "Check": false },
+        { "Tipo": "Passaro", "TaskTime": 30, "Dinheiro": 70, "Check": false },
     ]
+
+let banhoStatus = 
+[
+    {"Tipo":"Gato", "TaskTime":30, "Dinheiro":70, "Check":false},
+    {"Tipo":"Cao", "TaskTime":30, "Dinheiro":70, "Check":false},
+    {"Tipo":"Passaro", "TaskTime":30, "Dinheiro":70, "Check":false},
+]
 
 let passeioStatus =
     [
@@ -36,7 +43,10 @@ let pedido =
         { "PedidoID": 7, "TipoPedido": "TosquiaCao", "TipoAnimal": "Cao", "Imagem": "CaoImg", "Tempo": 180 },
         { "PedidoID": 8, "TipoPedido": "TosquiaGato", "TipoAnimal": "Gato", "Imagem": "GatoImg", "Tempo": 180 },
         { "PedidoID": 9, "TipoPedido": "TosquiaPassaro", "TipoAnimal": "Passaro", "Imagem": "PassaroImg", "Tempo": 180 },
-        { "PedidoID": 10, "TipoPedido": "PasseioCao", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 180 },
+        { "PedidoID": 10, "TipoPedido": "BanhoCao", "TipoAnimal": "Cao", "Imagem": "CaoImg", "Tempo": 180 },
+        { "PedidoID": 11, "TipoPedido": "BanhoGato", "TipoAnimal": "Gato", "Imagem": "GatoImg", "Tempo": 180 },
+        { "PedidoID": 12, "TipoPedido": "BanhoPassaro", "TipoAnimal": "Passaro", "Imagem": "PassaroImg", "Tempo": 180 },
+        { "PedidoID": 13, "TipoPedido": "PasseioCao", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 180 },
     ]
 
 let inventory =
@@ -237,7 +247,7 @@ function pedidoTime() {
 
     let zonaPedidosDiv = document.getElementById("zona_pedidos");
 
-    for (let i = 0; i < queuelist[i].length; i++) {
+    for (let i = 0; i < queuelist.length; i++) {
         console.log(queuelist[i].pedidoNum);
 
         var timer = setInterval(
@@ -245,34 +255,37 @@ function pedidoTime() {
             function () {
                 queuelist[i].pedidoTime--;
 
-                if (queuelist[i].Check == true) {
+                console.log(queuelist[i].pedidoId + ": " + queuelist[i].pedidoTime);
+
+                if (queuelist[i].IsComplete === true) {
                     console.log("Abort CountDown");
                     clearInterval(timer);
 
-                    zonaPedidosDiv.removeChild(queuelist[i].pedidoId);
-
-                    delete queuelist[i];
                     queuelist.splice(i, 1);
+                }
+                else {
+                    if (queuelist[i].pedidoTime === 0) {
 
+                        clearInterval(timer);
+
+                        alert("Oops, não acabaste o pedido a tempo. O cliente saiu insatisfeito.");
+
+                        dinheiroDicionario.DinheiroDia = racaolist[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
+
+                        resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
+
+                        let dinheiroProfile = JSON.stringify(resultsdia);
+
+                        localStorage.setItem("Dinheiro", dinheiroProfile);
+                        getMoneyLocal();
+
+                        zonaPedidosDiv.removeChild(queuelist[i].pedidoId);
+
+                        queuelist.splice(i, 1);
+                    }
                 }
 
-                if (queuelist[i].pedidoTime === 0) {
-
-                    clearInterval(timer);
-
-                    
-                    alert("Oops, não acabaste o pedido a tempo. O cliente saiu insatisfeito.");
-
-                    dinheiroDicionario.DinheiroDia = racaolist[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
-
-                    resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
-
-                    let dinheiroProfile = JSON.stringify(resultsdia);
-
-                    localStorage.setItem("Dinheiro", dinheiroProfile);
-                    getMoneyLocal();
-                }
-            }, 1000)
+            }, 2000)
     }
 }
 
@@ -294,7 +307,7 @@ function AnimalFome() {
                 function () {
                     animallist[i].Hungy--;
 
-                    console.log(animallist[i].Tipo + ":" + animallist[i].Hungy);
+                    //console.log(animallist[i].Tipo + ":" + animallist[i].Hungy);
 
                     if (animallist[i].Hungy >= 300) {
                         animallist[i].Hungy = 300;
@@ -479,8 +492,8 @@ function pedidoBalcao() {
     if (gameActive) {
         //Div exclusivamente para por pedidos la no html
         let zonaPedidosDiv = document.getElementById("zona_pedidos");
-        //Genera um numero aleatorio entre 1 a 6
-        let pedidoNumber = Math.floor(Math.random() * 6) + 1
+        //Genera um numero aleatorio entre 1 a 13
+        let pedidoNumber = Math.floor(Math.random() * 13) + 1
 
         for (let i = 0; i < pedido.length; i++) {
             if (pedidoNumber === pedido[i].PedidoID) {
@@ -504,10 +517,10 @@ function pedidoBalcao() {
                         "pedidoNum": a,
                         "pedidoId": "pedido" + a,
                         "pedidoTime": pedido[i].Tempo,
-                        "Check": false,
+                        "IsComplete": false,
                     }
                 );
-                pedidoTime(countDownPedido);
+                pedidoTime();
 
                 a++;
 
@@ -552,6 +565,9 @@ function giveOrder(PedidoID, Pedido, Animal) {
                     if (inventory[i].Quantidade === 0) {
                         inventory[i].HasCheck = false;
                     }
+
+                    queuelist[a].IsComplete = true;
+
                     console.log("Sucessful Order");
                     break;
                 }
@@ -578,7 +594,5 @@ function giveOrder(PedidoID, Pedido, Animal) {
         //Remove o pedido
 
         zonaPedidosDiv.removeChild(currentOrder[a]);
-        delete queuelist[a];
-        queuelist.splice(a, 1);
     }
 }
