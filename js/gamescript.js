@@ -13,19 +13,9 @@ let racaolist =
         { "Tipo": "Passaro", "Quantidade": 10, "Dinheiro": 30, "TaskTime": 30, "Check": true },
     ]
 
-let tosquiaStatus =
-    [
-        { "Tipo": "Gato", "TaskTime": 30, "Dinheiro": 70, "Check": false },
-        { "Tipo": "Cao", "TaskTime": 30, "Dinheiro": 70, "Check": false },
-        { "Tipo": "Passaro", "TaskTime": 30, "Dinheiro": 70, "Check": false },
-    ]
+let tosquiaStatus = []
 
-let banhoStatus = 
-[
-    {"Tipo":"Gato", "TaskTime":30, "Dinheiro":70, "Check":false},
-    {"Tipo":"Cao", "TaskTime":30, "Dinheiro":70, "Check":false},
-    {"Tipo":"Passaro", "TaskTime":30, "Dinheiro":70, "Check":false},
-]
+let banhoStatus = []
 
 let passeioStatus =
     [
@@ -34,32 +24,32 @@ let passeioStatus =
 
 let pedido =
     [
-        { "PedidoID": 1, "TipoPedido": "Racao", "TipoAnimal": "Cao", "Imagem": "RacaoCaoImg", "Tempo": 180 },
-        { "PedidoID": 2, "TipoPedido": "Racao", "TipoAnimal": "Gato", "Imagem": "RacaoGatoImg", "Tempo": 180 },
-        { "PedidoID": 3, "TipoPedido": "Racao", "TipoAnimal": "Passaro", "Imagem": "RacaoPassaroImg", "Tempo": 180 },
-        { "PedidoID": 4, "TipoPedido": "Animal", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 180 },
-        { "PedidoID": 5, "TipoPedido": "Animal", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 180 },
-        { "PedidoID": 6, "TipoPedido": "Animal", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 180 },
-        { "PedidoID": 7, "TipoPedido": "TosquiaCao", "TipoAnimal": "Cao", "Imagem": "CaoImg", "Tempo": 180 },
-        { "PedidoID": 8, "TipoPedido": "TosquiaGato", "TipoAnimal": "Gato", "Imagem": "GatoImg", "Tempo": 180 },
-        { "PedidoID": 9, "TipoPedido": "TosquiaPassaro", "TipoAnimal": "Passaro", "Imagem": "PassaroImg", "Tempo": 180 },
-        { "PedidoID": 10, "TipoPedido": "BanhoCao", "TipoAnimal": "Cao", "Imagem": "CaoImg", "Tempo": 180 },
-        { "PedidoID": 11, "TipoPedido": "BanhoGato", "TipoAnimal": "Gato", "Imagem": "GatoImg", "Tempo": 180 },
-        { "PedidoID": 12, "TipoPedido": "BanhoPassaro", "TipoAnimal": "Passaro", "Imagem": "PassaroImg", "Tempo": 180 },
-        { "PedidoID": 13, "TipoPedido": "PasseioCao", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 180 },
+        { "PedidoID": 1, "TipoPedido": "Racao", "TipoAnimal": "Cao", "Imagem": "RacaoCaoImg", "Tempo": 60,"Dinheiro": 30 },
+        { "PedidoID": 2, "TipoPedido": "Racao", "TipoAnimal": "Gato", "Imagem": "RacaoGatoImg", "Tempo": 60, "Dinheiro": 30 },
+        { "PedidoID": 3, "TipoPedido": "Racao", "TipoAnimal": "Passaro", "Imagem": "RacaoPassaroImg", "Tempo": 60, "Dinheiro": 30 },
+        { "PedidoID": 4, "TipoPedido": "Adotar", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 150 },
+        { "PedidoID": 5, "TipoPedido": "Adotar", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 60, "Dinheiro": 150 },
+        { "PedidoID": 6, "TipoPedido": "Adotar", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 60, "Dinheiro": 150 },
+        { "PedidoID": 7, "TipoPedido": "Tosquia", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 8, "TipoPedido": "Tosquia", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 9, "TipoPedido": "Tosquia", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 10, "TipoPedido": "Banho", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 11, "TipoPedido": "Banho", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 12, "TipoPedido": "Banho", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 13, "TipoPedido": "Passeio", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 70},
     ]
 
 let inventory =
     [
-        { "Tipo": "Animal", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
-        { "Tipo": "Animal", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
-        { "Tipo": "Animal", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
+        { "Tipo": "Adotar", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
+        { "Tipo": "Adotar", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
+        { "Tipo": "Adotar", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
         { "Tipo": "Racao", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 30, "HasCheck": false },
         { "Tipo": "Racao", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 30, "HasCheck": false },
         { "Tipo": "Racao", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 30, "HasCheck": false },
     ]
 
-let resultsdia = { "DinheiroDia": "0", "DinheiroTotal": "0" }
+let resultsdia = { "DinheiroDia": 0, "DinheiroTotal": 0 }
 
 let queuelist = []
 
@@ -79,6 +69,8 @@ function init() {
     getCurrentTime();
 
     ShopTimer(countDownTime);
+
+    MostrarTosquiaList();
 
     checkQuantities();
 
@@ -239,53 +231,59 @@ function ShopTimer() {
         }, 1000)
 }
 
-//Função que começa o timer para o tempo limite do pedido do cliente
+//Função que começa o timer para o tempo limite do pedido do cliente, chamada após a função pedidoBalcao é executada
 function pedidoTime() {
-
     let dinheiroLocalStorage = localStorage.getItem("Dinheiro");
     let dinheiroDicionario = JSON.parse(dinheiroLocalStorage);
 
     let zonaPedidosDiv = document.getElementById("zona_pedidos");
 
+    //Percorre o array com os pedidos
     for (let i = 0; i < queuelist.length; i++) {
-        console.log(queuelist[i].pedidoNum);
+        //i e armazenada nesta função anonima para não se perder no setIntervals
+        (function (i) {
+            const timer = setInterval(function () {
+                //currentOrder seria o child node da zonaPedidosDiv
 
-        var timer = setInterval(
+                //Subtrai o tempo de cada pedido
+                if (queuelist[i] != null) {
+                    let currentOrder = document.getElementById(queuelist[i].pedidoId);
+                    console.log(currentOrder);
+                    queuelist[i].pedidoTime--;
 
-            function () {
-                queuelist[i].pedidoTime--;
+                    console.log(queuelist[i].pedidoId + ": " + queuelist[i].pedidoTime);
 
-                console.log(queuelist[i].pedidoId + ": " + queuelist[i].pedidoTime);
-
-                if (queuelist[i].IsComplete === true) {
-                    console.log("Abort CountDown");
-                    clearInterval(timer);
-
-                    queuelist.splice(i, 1);
-                }
-                else {
-                    if (queuelist[i].pedidoTime === 0) {
-
+                    //Se o pedido foi completado
+                    if (queuelist[i].IsComplete == true) {
+                        console.log("Abort CountDown");
                         clearInterval(timer);
 
-                        alert("Oops, não acabaste o pedido a tempo. O cliente saiu insatisfeito.");
-
-                        dinheiroDicionario.DinheiroDia = racaolist[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
-
-                        resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
-
-                        let dinheiroProfile = JSON.stringify(resultsdia);
-
-                        localStorage.setItem("Dinheiro", dinheiroProfile);
-                        getMoneyLocal();
-
-                        zonaPedidosDiv.removeChild(queuelist[i].pedidoId);
-
+                        zonaPedidosDiv.removeChild(currentOrder);
                         queuelist.splice(i, 1);
+                        return;
+                    }
+                    else {
+                        if (queuelist[i].pedidoTime === 0) {
+                            alert("Oops, não acabaste o pedido a tempo. O cliente saiu insatisfeito.");
+
+                            clearInterval(timer);
+
+                            dinheiroDicionario.DinheiroDia = queuelist[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
+
+                            resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
+
+                            let dinheiroProfile = JSON.stringify(resultsdia);
+
+                            localStorage.setItem("Dinheiro", dinheiroProfile);
+                            getMoneyLocal();
+
+                            zonaPedidosDiv.removeChild(currentOrder);
+                            queuelist.splice(i, 1);
+                        }
                     }
                 }
-
-            }, 2000)
+            }, 3000)
+        })(i);
     }
 }
 
@@ -331,7 +329,7 @@ function AnimalFome() {
 
                         animallist[i].Hungy = 300;
                     }
-                }, 1000);
+                }, 5000);
         }
     }
 }
@@ -409,7 +407,7 @@ function purchaseAnimal(Animal) {
     checkQuantities();
 }
 
-//Function para buscar a comida especifica de um animal
+//Function para buscar um animal
 function getAnimal(Animal) {
     if (gameActive) {
         let i
@@ -440,17 +438,19 @@ function getAnimal(Animal) {
     }
 }
 
-function tosquiarAnimal(Animal) {
-    for (let i = 0; i < tosquiaStatus.length; i++) {
+function tosquiarAnimal() {
+    for (let i = 0; i < tosquiaStatus.length; i++) 
+    {
 
 
     }
 }
 
-function passearAnimal(Animal) {
+function passearAnimal() {
     let i;
 
-    for (i = 0; i < passeioStatus.length; i++) {
+    for (i = 0; i < passeioStatus.length; i++) 
+    {
 
     }
 }
@@ -492,42 +492,249 @@ function pedidoBalcao() {
     if (gameActive) {
         //Div exclusivamente para por pedidos la no html
         let zonaPedidosDiv = document.getElementById("zona_pedidos");
-        //Genera um numero aleatorio entre 1 a 13
-        let pedidoNumber = Math.floor(Math.random() * 13) + 1
 
-        for (let i = 0; i < pedido.length; i++) {
-            if (pedidoNumber === pedido[i].PedidoID) {
-                console.log("O cliente pediu por:" + pedido[i].TipoPedido);
+        if (zonaPedidosDiv.childNodes.length > 3) {
+            alert("Não pode ter mais que 3 pedidos");
+        }
+        else {
+            //Genera um numero aleatorio entre 1 a 13
+            let pedidoNumber = Math.floor(Math.random() * 13) + 1
 
-                //Cria um buttao, botao tem os parametros do tipo de pedido e tipo de animal
-                let newPedido = document.createElement("Button");
-                newPedido.setAttribute("id", "pedido" + a);
-                newPedido.setAttribute("onclick", "giveOrder('pedido" + a + "','" + pedido[i].TipoPedido + "','" + pedido[i].TipoAnimal + "')");
+            for (let i = 0; i < pedido.length; i++) {
+                if (pedidoNumber === pedido[i].PedidoID) {
+                    console.log("O cliente pediu por:" + pedido[i].TipoPedido);
 
-                //Imagem vai para dentro do buttao
-                let imgPedido = document.createElement("img");
-                imgPedido.setAttribute("src", "./images/" + pedido[i].Imagem + ".png");
-                imgPedido.setAttribute("alt", pedido[i].Imagem);
+                    let pedidoContainer = document.createElement("div");
+                    pedidoContainer.setAttribute("id", "pedido" + a)
+                    pedidoContainer.setAttribute("class", "pedido_container")
 
-                zonaPedidosDiv.appendChild(newPedido);
-                newPedido.appendChild(imgPedido);
+                    let imgContainer = document.createElement("div");
 
-                queuelist.push(
-                    {
-                        "pedidoNum": a,
-                        "pedidoId": "pedido" + a,
-                        "pedidoTime": pedido[i].Tempo,
-                        "IsComplete": false,
+                    //Imagem vai para a tabela   
+                    let imgPedido = document.createElement("img");
+                    imgPedido.setAttribute("src", "./images/" + pedido[i].Imagem + ".png");
+                    imgPedido.setAttribute("alt", pedido[i].Imagem);
+
+                    let numContainer = document.createElement("div");
+                    numContainer.textContent = a;
+
+                    let tipoContainer = document.createElement("div");
+                    tipoContainer.textContent = "Tipo de Pedido: " + pedido[i].TipoPedido + " de " + pedido[i].TipoAnimal;
+
+                    let timeContainer = document.createElement("div");
+                    timeContainer.textContent = "Tempo Limite: " + pedido[i].Tempo;
+
+                    let statusContainer = document.createElement("div");
+                    statusContainer.textContent = "Status: Pending";
+
+                    let buttonContainer = document.createElement("div");
+
+                    //Cria um buttao, botao tem os parametros do tipo de pedido e tipo de animal
+                    let buttonPedido = document.createElement("Button");
+                    buttonPedido.setAttribute("onclick", "giveOrder('pedido" + a + "','" + pedido[i].TipoPedido + "','" + pedido[i].TipoAnimal + "')");
+                    buttonPedido.textContent = "Terminar Pedido";
+
+                    queuelist.push(
+                        {
+                            "pedidoNum": a,
+                            "pedidoTipo": pedido[i].TipoPedido,
+                            "PedidoAnimal": pedido[i].TipoAnimal,
+                            "pedidoId": "pedido" + a,
+                            "Dinheiro": pedido[i].Dinheiro,
+                            "pedidoTime": pedido[i].Tempo,
+                            "IsComplete": false,
+                        }
+                    );
+
+                    if (pedido[i].TipoPedido === 'Tosquia') {
+                        tosquiaStatus.push(
+                            {
+                                "tosquiaId": a,
+                                "Tipo": pedido[i].TipoAnimal,
+                                "TaskTime": 30,
+                                "Dinheiro": 70,
+                                "IsComplete": false,
+                            }
+                        )
+                        clearLista();
+                        MostrarTosquiaList();
                     }
-                );
-                pedidoTime();
+                    else if (pedido[i].TipoPedido === 'Banho') {
+                        banhoStatus.push(
+                            {
+                                "banhoId": a,
+                                "Tipo": pedido[i].TipoAnimal,
+                                "TaskTime": 30,
+                                "Dinheiro": 70,
+                                "IsComplete": false,
+                            }
+                        )
+                        clearLista();
+                        CriaBanhosList();
+                    }
 
-                a++;
+                    zonaPedidosDiv.appendChild(pedidoContainer);
+                    pedidoContainer.appendChild(imgContainer);
+                    pedidoContainer.appendChild(numContainer);
+                    pedidoContainer.appendChild(tipoContainer);
+                    pedidoContainer.appendChild(timeContainer);
+                    pedidoContainer.appendChild(statusContainer);
+                    pedidoContainer.appendChild(buttonContainer);
+                    imgContainer.appendChild(imgPedido);
+                    buttonContainer.appendChild(buttonPedido);
 
-                //Acaba aqui para n fazer asneira
-                break;
+                    pedidoTime();
+
+                    a++;
+
+                    //Acaba aqui para n fazer asneira
+                    break;
+                }
             }
         }
+    }
+}
+
+function clearLista()
+{
+    let tosquiasdiv = document.getElementById("tosquias_container");
+    tosquiasdiv.textContent = "";
+
+    let banhosdiv = document.getElementById("banhos_container");
+    banhosdiv.textContent = "";
+}
+
+function MostrarTosquiaList() {
+    let tosquiasdiv = document.getElementById("tosquias_container");
+
+    if(tosquiaStatus.length > 0 )
+    {
+        let tabela = document.createElement("table");
+    
+        let headerRow = document.createElement("tr");
+        let numHeader = document.createElement("th");
+        numHeader.textContent = "Numero";
+    
+        let tipoHeader = document.createElement("th");
+        tipoHeader.textContent = "Animal";
+    
+        let tempoHeader = document.createElement("th");
+        tempoHeader.textContent = "Duração";
+    
+        let statusHeader = document.createElement("th");
+        statusHeader.textContent = "Tosqueado?";
+    
+        let buttonHeader = document.createElement("th");
+    
+        tosquiasdiv.appendChild(tabela);
+        tabela.appendChild(headerRow);
+        headerRow.appendChild(numHeader);
+        headerRow.appendChild(tipoHeader);
+        headerRow.appendChild(tempoHeader);
+        headerRow.appendChild(statusHeader);
+        headerRow.appendChild(buttonHeader);
+    
+        for (let i = 0; i < tosquiaStatus.length; i++) {
+            let rows = document.createElement("tr");
+    
+            let animalNum = document.createElement("td");
+            animalNum.textContent = tosquiaStatus[i].tosquiaId;
+    
+            let animalTipo = document.createElement("td");
+            animalTipo.textContent = tosquiaStatus[i].Tipo;
+            
+            let animalTempo = document.createElement("td");
+            animalTempo.textContent = tosquiaStatus[i].TaskTime;
+    
+            let animalStatus = document.createElement("td");
+    
+            if (tosquiaStatus[i].IsComplete == false) {
+                animalStatus.textContent = "Não Tosqueado";
+            }
+            else {
+                animalStatus.textContent = "Tosqueado";
+            }
+    
+            let animalButton = document.createElement("td");
+            let tosquiaButton = document.createElement("button");
+            tosquiaButton.setAttribute("onclick", "'" + tosquiaStatus[i].tosquiaId + "'," + "'" + tosquiaStatus[i].Tipo + "'");
+            tosquiaButton.textContent = "Tosquiar Animal";
+    
+            tabela.appendChild(rows);
+            rows.appendChild(animalNum);
+            rows.appendChild(animalTipo);
+            rows.appendChild(animalTempo);
+            rows.appendChild(animalStatus);
+            rows.appendChild(animalButton);
+            animalButton.appendChild(tosquiaButton);
+        }
+    }
+    else
+    {
+        tosquiasdiv.textContent = "Não tem tosquias para fazer."
+    }
+}
+
+function CriaBanhosList() {
+    let tosquiasdiv = document.getElementById("banhos_container");
+    let tabela = document.createElement("table");
+
+    let headerRow = document.createElement("tr");
+    let numHeader = document.createElement("th");
+    numHeader.textContent = "Numero";
+
+    let tipoHeader = document.createElement("th");
+    tipoHeader.textContent = "Animal";
+
+    let tempoHeader = document.createElement("th");
+    tempoHeader.textContent = "Duração";
+
+    let statusHeader = document.createElement("th");
+    statusHeader.textContent = "Lavado?";
+
+    let buttonHeader = document.createElement("th");
+
+    tosquiasdiv.appendChild(tabela);
+    tabela.appendChild(headerRow);
+    headerRow.appendChild(numHeader);
+    headerRow.appendChild(tipoHeader);
+    headerRow.appendChild(tempoHeader);
+    headerRow.appendChild(statusHeader);
+    headerRow.appendChild(buttonHeader);
+
+    for (let i = 0; i < banhoStatus.length; i++) {
+        let rows = document.createElement("tr");
+
+        let animalNum = document.createElement("td");
+        animalNum.textContent = banhoStatus[i].banhoId;
+
+        let animalTipo = document.createElement("td");
+        animalTipo.textContent = banhoStatus[i].Tipo;
+
+        let animalTempo = document.createElement("td");
+        animalTempo.textContent = banhoStatus[i].TaskTime;
+
+        let animalStatus = document.createElement("td");
+
+        if (banhoStatus[i].IsComplete == false) {
+            animalStatus.textContent = "Não Lavado";
+        }
+        else {
+            animalStatus.textContent = "Lavado";
+        }
+
+        let animalButton = document.createElement("td");
+        let banhoButton = document.createElement("button");
+        banhoButton.setAttribute("onclick", "'" + banhoStatus[i].banhoId + "','" + banhoStatus[i].Tipo);
+        banhoButton.textContent = "Lavar Animal";
+
+        tabela.appendChild(rows);
+        rows.appendChild(animalNum);
+        rows.appendChild(animalTipo);
+        rows.appendChild(animalTempo);
+        rows.appendChild(animalStatus);
+        rows.appendChild(animalButton);
+        animalButton.appendChild(banhoButton);
     }
 }
 
@@ -535,8 +742,6 @@ function pedidoBalcao() {
 function giveOrder(PedidoID, Pedido, Animal) {
     let dinheiroLocalStorage = localStorage.getItem("Dinheiro");
     let dinheiroDicionario = JSON.parse(dinheiroLocalStorage);
-    let zonaPedidosDiv = document.getElementById("zona_pedidos");
-    let currentOrder = zonaPedidosDiv.childNodes;
 
     let a;
     let i;
@@ -569,11 +774,13 @@ function giveOrder(PedidoID, Pedido, Animal) {
                     queuelist[a].IsComplete = true;
 
                     console.log("Sucessful Order");
+                    alert("Bom trabalho! O pedido foi feito com sucesso!")
                     break;
                 }
                 else {
                     console.log("Failed Order");
-                    alert("Não tens o pedido do Cliente. O cliente não está satisfeito.");
+                    alert("Afinal não tinhas o pedido do Cliente. O cliente não está satisfeito com isto e saí da loja.");
+                    queuelist[a].IsComplete = true;
 
                     //Subtrai o dinheiro
                     dinheiroDicionario.DinheiroDia = inventory[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
@@ -590,9 +797,5 @@ function giveOrder(PedidoID, Pedido, Animal) {
 
         localStorage.setItem("Dinheiro", dinheiroProfile);
         getMoneyLocal();
-
-        //Remove o pedido
-
-        zonaPedidosDiv.removeChild(currentOrder[a]);
     }
 }
