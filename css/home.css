@@ -134,7 +134,6 @@ header {
     width: 170px;
 }
 
-
 #zona_animais {
     display: flex;
     justify-content: flex-end;
@@ -161,6 +160,20 @@ header {
     border: 1px solid black;
     padding: 5px;
     text-align: center;
+}
+
+#tosquias_container
+{
+    padding-left: 20px;
+    margin-bottom:10px;
+    margin-right:5px;
+}
+
+#banhos_container
+{
+    padding-left: 20px;
+    margin-bottom:10px;
+    margin-right:5px;
 }
 
 table {

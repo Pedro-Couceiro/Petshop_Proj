@@ -17,14 +17,11 @@ let tosquiaStatus = []
 
 let banhoStatus = []
 
-let passeioStatus =
-    [
-        { "TipoAnimal": "Cao", "TaskTime": 30, "Dinheiro": 70, "Check": false },
-    ]
+let passeioStatus = []
 
 let pedido =
     [
-        { "PedidoID": 1, "TipoPedido": "Racao", "TipoAnimal": "Cao", "Imagem": "RacaoCaoImg", "Tempo": 60,"Dinheiro": 30 },
+        { "PedidoID": 1, "TipoPedido": "Racao", "TipoAnimal": "Cao", "Imagem": "RacaoCaoImg", "Tempo": 60, "Dinheiro": 30 },
         { "PedidoID": 2, "TipoPedido": "Racao", "TipoAnimal": "Gato", "Imagem": "RacaoGatoImg", "Tempo": 60, "Dinheiro": 30 },
         { "PedidoID": 3, "TipoPedido": "Racao", "TipoAnimal": "Passaro", "Imagem": "RacaoPassaroImg", "Tempo": 60, "Dinheiro": 30 },
         { "PedidoID": 4, "TipoPedido": "Adotar", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 150 },
@@ -36,7 +33,7 @@ let pedido =
         { "PedidoID": 10, "TipoPedido": "Banho", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 70 },
         { "PedidoID": 11, "TipoPedido": "Banho", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 60, "Dinheiro": 70 },
         { "PedidoID": 12, "TipoPedido": "Banho", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 13, "TipoPedido": "Passeio", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 70},
+        { "PedidoID": 13, "TipoPedido": "Passeio", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 70 },
     ]
 
 let inventory =
@@ -72,6 +69,8 @@ function init() {
 
     MostrarTosquiaList();
 
+    MostrarBanhosList();
+
     checkQuantities();
 
     AnimalFome();
@@ -96,6 +95,7 @@ function OpenZona(zona) {
     let balcaoDiv = document.getElementById("zona_balcao");
     let racaoDiv = document.getElementById("zona_alimentacao");
     let tosquiaDiv = document.getElementById("zona_tosquias");
+    let passeiosDiv = document.getElementById("zona_passeios");
 
     if (zona === 'Animais') {
         animaisDiv.style.display = 'block';
@@ -116,7 +116,7 @@ function OpenZona(zona) {
         tosquiaDiv.style.display = 'none';
 
     }
-    else {
+    else if (zona === 'Tosquias') {
         tosquiaDiv.style.display = 'block';
         animaisDiv.style.display = 'none';
         balcaoDiv.style.display = 'none';
@@ -248,7 +248,6 @@ function pedidoTime() {
                 //Subtrai o tempo de cada pedido
                 if (queuelist[i] != null) {
                     let currentOrder = document.getElementById(queuelist[i].pedidoId);
-                    console.log(currentOrder);
                     queuelist[i].pedidoTime--;
 
                     console.log(queuelist[i].pedidoId + ": " + queuelist[i].pedidoTime);
@@ -268,7 +267,7 @@ function pedidoTime() {
 
                             clearInterval(timer);
 
-                            dinheiroDicionario.DinheiroDia = queuelist[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
+                            dinheiroDicionario.DinheiroDia = parseInt(dinheiroDicionario.DinheiroDia) - queuelist[i].Dinheiro;
 
                             resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
 
@@ -438,19 +437,52 @@ function getAnimal(Animal) {
     }
 }
 
-function tosquiarAnimal() {
-    for (let i = 0; i < tosquiaStatus.length; i++) 
-    {
+function tosquiarAnimal(numId) {
+    let promptText = "Quer tosquiar este animal?"
 
+    if (confirm(promptText)) {
+        for (let i = 0; i < tosquiaStatus.length; i++) {
+            if (numId == tosquiaStatus[i].tosquiaNum) {
+                tosquiaStatus[i].IsComplete = true;
 
+                wasteTime(tosquiaStatus[i].TaskTime);
+                console.log("Gastou " + tosquiaStatus[i].TaskTime);
+                alert("O animal foi tosqueado!");
+
+                break;
+            }
+        }
+        clearListaTosquia();
+        MostrarTosquiaList();
     }
 }
 
-function passearAnimal() {
+
+function lavarAnimal(numId) {
+    let promptText = "Quer lavar este animal?"
+
+    if (confirm(promptText)) {
+        for (let i = 0; i < banhoStatus.length; i++) {
+            if (numId == banhoStatus[i].banhoNum) {
+                banhoStatus[i].IsComplete = true;
+
+                wasteTime(banhoStatus[i].TaskTime);
+
+                console.log("Gastou " + banhoStatus[i].TaskTime);
+                alert("O animal foi lavado!");
+
+                break;
+            }
+        }
+        clearListaBanhos();
+        MostrarBanhosList();
+    }
+}
+
+function passearAnimal(numId) {
     let i;
 
-    for (i = 0; i < passeioStatus.length; i++) 
-    {
+    for (i = 0; i < passeioStatus.length; i++) {
 
     }
 }
@@ -549,28 +581,30 @@ function pedidoBalcao() {
                     if (pedido[i].TipoPedido === 'Tosquia') {
                         tosquiaStatus.push(
                             {
-                                "tosquiaId": a,
+                                "tosquiaNum": a,
+                                "tosquiaId": "pedido" + a,
                                 "Tipo": pedido[i].TipoAnimal,
                                 "TaskTime": 30,
                                 "Dinheiro": 70,
                                 "IsComplete": false,
                             }
                         )
-                        clearLista();
+                        clearListaTosquia();
                         MostrarTosquiaList();
                     }
                     else if (pedido[i].TipoPedido === 'Banho') {
                         banhoStatus.push(
                             {
-                                "banhoId": a,
+                                "banhoNum": a,
+                                "banhoId": "pedido" + a,
                                 "Tipo": pedido[i].TipoAnimal,
                                 "TaskTime": 30,
                                 "Dinheiro": 70,
                                 "IsComplete": false,
                             }
                         )
-                        clearLista();
-                        CriaBanhosList();
+                        clearListaBanhos();
+                        MostrarBanhosList();
                     }
 
                     zonaPedidosDiv.appendChild(pedidoContainer);
@@ -595,11 +629,12 @@ function pedidoBalcao() {
     }
 }
 
-function clearLista()
-{
+function clearListaTosquia() {
     let tosquiasdiv = document.getElementById("tosquias_container");
     tosquiasdiv.textContent = "";
+}
 
+function clearListaBanhos() {
     let banhosdiv = document.getElementById("banhos_container");
     banhosdiv.textContent = "";
 }
@@ -607,25 +642,25 @@ function clearLista()
 function MostrarTosquiaList() {
     let tosquiasdiv = document.getElementById("tosquias_container");
 
-    if(tosquiaStatus.length > 0 )
-    {
+    if (tosquiaStatus.length > 0) {
         let tabela = document.createElement("table");
-    
+        tabela.setAttribute("id", "tabela_tosquia");
+
         let headerRow = document.createElement("tr");
         let numHeader = document.createElement("th");
         numHeader.textContent = "Numero";
-    
+
         let tipoHeader = document.createElement("th");
         tipoHeader.textContent = "Animal";
-    
+
         let tempoHeader = document.createElement("th");
         tempoHeader.textContent = "Duração";
-    
+
         let statusHeader = document.createElement("th");
         statusHeader.textContent = "Tosqueado?";
-    
+
         let buttonHeader = document.createElement("th");
-    
+
         tosquiasdiv.appendChild(tabela);
         tabela.appendChild(headerRow);
         headerRow.appendChild(numHeader);
@@ -633,33 +668,33 @@ function MostrarTosquiaList() {
         headerRow.appendChild(tempoHeader);
         headerRow.appendChild(statusHeader);
         headerRow.appendChild(buttonHeader);
-    
+
         for (let i = 0; i < tosquiaStatus.length; i++) {
             let rows = document.createElement("tr");
-    
+
             let animalNum = document.createElement("td");
-            animalNum.textContent = tosquiaStatus[i].tosquiaId;
-    
+            animalNum.textContent = tosquiaStatus[i].tosquiaNum;
+
             let animalTipo = document.createElement("td");
             animalTipo.textContent = tosquiaStatus[i].Tipo;
-            
+
             let animalTempo = document.createElement("td");
             animalTempo.textContent = tosquiaStatus[i].TaskTime;
-    
+
             let animalStatus = document.createElement("td");
-    
+
             if (tosquiaStatus[i].IsComplete == false) {
                 animalStatus.textContent = "Não Tosqueado";
             }
             else {
                 animalStatus.textContent = "Tosqueado";
             }
-    
+
             let animalButton = document.createElement("td");
             let tosquiaButton = document.createElement("button");
-            tosquiaButton.setAttribute("onclick", "'" + tosquiaStatus[i].tosquiaId + "'," + "'" + tosquiaStatus[i].Tipo + "'");
+            tosquiaButton.setAttribute("onclick", "tosquiarAnimal('" + tosquiaStatus[i].tosquiaNum + "')");
             tosquiaButton.textContent = "Tosquiar Animal";
-    
+
             tabela.appendChild(rows);
             rows.appendChild(animalNum);
             rows.appendChild(animalTipo);
@@ -669,72 +704,78 @@ function MostrarTosquiaList() {
             animalButton.appendChild(tosquiaButton);
         }
     }
-    else
-    {
-        tosquiasdiv.textContent = "Não tem tosquias para fazer."
+    else {
+        tosquiasdiv.textContent = "Não tem Animais para Tosquiar."
     }
 }
 
-function CriaBanhosList() {
-    let tosquiasdiv = document.getElementById("banhos_container");
-    let tabela = document.createElement("table");
+function MostrarBanhosList() {
+    let banhosdiv = document.getElementById("banhos_container");
 
-    let headerRow = document.createElement("tr");
-    let numHeader = document.createElement("th");
-    numHeader.textContent = "Numero";
+    if (banhoStatus.length > 0) {
+        let tabela = document.createElement("table");
+        tabela.setAttribute("id", "tabela_banho");
 
-    let tipoHeader = document.createElement("th");
-    tipoHeader.textContent = "Animal";
+        let headerRow = document.createElement("tr");
+        let numHeader = document.createElement("th");
+        numHeader.textContent = "Numero";
 
-    let tempoHeader = document.createElement("th");
-    tempoHeader.textContent = "Duração";
+        let tipoHeader = document.createElement("th");
+        tipoHeader.textContent = "Animal";
 
-    let statusHeader = document.createElement("th");
-    statusHeader.textContent = "Lavado?";
+        let tempoHeader = document.createElement("th");
+        tempoHeader.textContent = "Duração";
 
-    let buttonHeader = document.createElement("th");
+        let statusHeader = document.createElement("th");
+        statusHeader.textContent = "Lavado?";
 
-    tosquiasdiv.appendChild(tabela);
-    tabela.appendChild(headerRow);
-    headerRow.appendChild(numHeader);
-    headerRow.appendChild(tipoHeader);
-    headerRow.appendChild(tempoHeader);
-    headerRow.appendChild(statusHeader);
-    headerRow.appendChild(buttonHeader);
+        let buttonHeader = document.createElement("th");
 
-    for (let i = 0; i < banhoStatus.length; i++) {
-        let rows = document.createElement("tr");
+        banhosdiv.appendChild(tabela);
+        tabela.appendChild(headerRow);
+        headerRow.appendChild(numHeader);
+        headerRow.appendChild(tipoHeader);
+        headerRow.appendChild(tempoHeader);
+        headerRow.appendChild(statusHeader);
+        headerRow.appendChild(buttonHeader);
 
-        let animalNum = document.createElement("td");
-        animalNum.textContent = banhoStatus[i].banhoId;
+        for (let i = 0; i < banhoStatus.length; i++) {
+            let rows = document.createElement("tr");
 
-        let animalTipo = document.createElement("td");
-        animalTipo.textContent = banhoStatus[i].Tipo;
+            let animalNum = document.createElement("td");
+            animalNum.textContent = banhoStatus[i].banhoNum;
 
-        let animalTempo = document.createElement("td");
-        animalTempo.textContent = banhoStatus[i].TaskTime;
+            let animalTipo = document.createElement("td");
+            animalTipo.textContent = banhoStatus[i].Tipo;
 
-        let animalStatus = document.createElement("td");
+            let animalTempo = document.createElement("td");
+            animalTempo.textContent = banhoStatus[i].TaskTime;
 
-        if (banhoStatus[i].IsComplete == false) {
-            animalStatus.textContent = "Não Lavado";
+            let animalStatus = document.createElement("td");
+
+            if (banhoStatus[i].IsComplete == false) {
+                animalStatus.textContent = "Não Lavado";
+            }
+            else {
+                animalStatus.textContent = "Lavado";
+            }
+
+            let animalButton = document.createElement("td");
+            let banhoButton = document.createElement("button");
+            banhoButton.setAttribute("onclick", "lavarAnimal('" + banhoStatus[i].banhoNum + "')");
+            banhoButton.textContent = "Lavar Animal";
+
+            tabela.appendChild(rows);
+            rows.appendChild(animalNum);
+            rows.appendChild(animalTipo);
+            rows.appendChild(animalTempo);
+            rows.appendChild(animalStatus);
+            rows.appendChild(animalButton);
+            animalButton.appendChild(banhoButton);
         }
-        else {
-            animalStatus.textContent = "Lavado";
-        }
-
-        let animalButton = document.createElement("td");
-        let banhoButton = document.createElement("button");
-        banhoButton.setAttribute("onclick", "'" + banhoStatus[i].banhoId + "','" + banhoStatus[i].Tipo);
-        banhoButton.textContent = "Lavar Animal";
-
-        tabela.appendChild(rows);
-        rows.appendChild(animalNum);
-        rows.appendChild(animalTipo);
-        rows.appendChild(animalTempo);
-        rows.appendChild(animalStatus);
-        rows.appendChild(animalButton);
-        animalButton.appendChild(banhoButton);
+    }
+    else {
+        banhosdiv.textContent = "Não tem Animais para lavar."
     }
 }
 
@@ -743,52 +784,125 @@ function giveOrder(PedidoID, Pedido, Animal) {
     let dinheiroLocalStorage = localStorage.getItem("Dinheiro");
     let dinheiroDicionario = JSON.parse(dinheiroLocalStorage);
 
-    let a;
+    let b;
     let i;
 
     let promptText = "De certeza que quer completar este pedido? Carregue OK se sim, carregue CANCEL se não";
 
-    for (a = 0; a < queuelist.length; a++) {
-        if (queuelist[a].pedidoId === PedidoID) {
+    for (b = 0; b < queuelist.length; b++) {
+        if (queuelist[b].pedidoId === PedidoID) {
             break;
         }
     }
 
     if (confirm(promptText)) {
-        for (i = 0; i < inventory.length; i++) {
-            //Verifica o tipo de Animal
-            if (Pedido === inventory[i].Tipo && Animal === inventory[i].TipoAnimal) {
-                //Verifica se tem o animal
-                if (inventory[i].HasCheck == true) {
-                    //Subtrai a quantidade que o jogador tem
-                    inventory[i].Quantidade = inventory[i].Quantidade - 1;
+        if (Pedido == "Adotar" || Pedido == "Racao") {
+            for (i = 0; i < inventory.length; i++) {
+                //Verifica se o pedido é de ração ou de adoção
+                if (Pedido === inventory[i].Tipo && Animal === inventory[i].TipoAnimal) {
+                    //Verifica se o jogador tem o item do cliente
+                    if (inventory[i].HasCheck == true) {
+                        //Subtrai a quantidade que o jogador tem
+                        inventory[i].Quantidade = inventory[i].Quantidade - 1;
 
-                    //Soma o dinheiro
-                    dinheiroDicionario.DinheiroDia = inventory[i].Dinheiro + parseInt(dinheiroDicionario.DinheiroDia);
+                        //Soma o dinheiro
+                        dinheiroDicionario.DinheiroDia = parseInt(dinheiroDicionario.DinheiroDia) + inventory[i].Dinheiro;
 
-                    //Se chegar a quantidade chegar a zero, o check fica falso
-                    if (inventory[i].Quantidade === 0) {
-                        inventory[i].HasCheck = false;
+                        //Se chegar a quantidade chegar a zero, o check fica falso
+                        if (inventory[i].Quantidade === 0) {
+                            inventory[i].HasCheck = false;
+                        }
+
+                        queuelist[b].IsComplete = true;
+
+                        console.log("Sucessful Order");
+                        alert("Bom trabalho! O pedido foi feito com sucesso!");
+                        break;
                     }
+                    else {
+                        console.log("Failed Order");
+                        alert("Afinal não tinhas o pedido do Cliente. O cliente não está satisfeito com isto e saí da loja.");
+                        queuelist[b].IsComplete = true;
 
-                    queuelist[a].IsComplete = true;
-
-                    console.log("Sucessful Order");
-                    alert("Bom trabalho! O pedido foi feito com sucesso!")
-                    break;
+                        //Subtrai o dinheiro
+                        dinheiroDicionario.DinheiroDia = parseInt(dinheiroDicionario.DinheiroDia) - inventory[i].Dinheiro;
+                        break;
+                    }
                 }
-                else {
-                    console.log("Failed Order");
-                    alert("Afinal não tinhas o pedido do Cliente. O cliente não está satisfeito com isto e saí da loja.");
-                    queuelist[a].IsComplete = true;
+            }
+            console.log("Tens " + inventory[i].Quantidade + " de " + inventory[i].Nome);
+        }
+        else if (Pedido == "Tosquia") {
+            for (let i = 0; i < tosquiaStatus.length; i++) {
+                console.log(tosquiaStatus[i].tosquiaId);
+                if (PedidoID === tosquiaStatus[i].tosquiaId) {
+                    if (tosquiaStatus[i].IsComplete === true) {
+                        console.log("Sucessful Order");
 
-                    //Subtrai o dinheiro
-                    dinheiroDicionario.DinheiroDia = inventory[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
-                    break;
+                        dinheiroDicionario.DinheiroDia = tosquiaStatus[i].Dinheiro + parseInt(dinheiroDicionario.DinheiroDia);
+                        queuelist[b].IsComplete = true;
+
+                        tosquiaStatus.splice(i, 1);
+                        clearListaTosquia();
+                        MostrarTosquiaList();
+
+                        alert("Bom trabalho! O pedido foi feito com sucesso!");
+                        break;
+                    }
+                    else {
+                        console.log("Failed Order");
+
+                        dinheiroDicionario.DinheiroDia = tosquiaStatus[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
+                        queuelist[b].IsComplete = true;
+
+                        tosquiaStatus.splice(i, 1);
+                        clearListaTosquia();
+                        MostrarTosquiaList();
+
+                        alert("Afinal não tinhas o pedido do Cliente. O cliente não está satisfeito com isto e saí da loja.");
+                        break;
+                    }
                 }
             }
         }
-        console.log("Tens " + inventory[i].Quantidade + " de " + inventory[i].Nome);
+        else if (Pedido == "Banho") {
+            for (let i = 0; i < banhoStatus.length; i++) {
+                console.log(banhoStatus[i].banhoId);
+                if (PedidoID === banhoStatus[i].banhoId) {
+                    if (banhoStatus[i].IsComplete === true) {
+                        console.log("Sucessful Order");
+
+                        dinheiroDicionario.DinheiroDia = banhoStatus[i].Dinheiro + parseInt(dinheiroDicionario.DinheiroDia);
+                        queuelist[b].IsComplete = true;
+
+                        banhoStatus.splice(i, 1);
+                        clearListaBanhos();
+                        MostrarBanhosList();
+
+                        alert("Bom trabalho! O pedido foi feito com sucesso!");
+                        break;
+                    }
+                    else {
+                        console.log("Failed Order");
+    
+                        dinheiroDicionario.DinheiroDia = banhoStatus[i].Dinheiro - parseInt(dinheiroDicionario.DinheiroDia);
+                        queuelist[b].IsComplete = true;
+    
+                        banhoStatus.splice(i, 1);
+                        clearListaBanhos();
+                        MostrarBanhosList();
+    
+                        alert("Afinal não tinhas o pedido do Cliente. O cliente não está satisfeito com isto e saí da loja.");
+                        break;
+                    }
+                }
+            }
+        }
+        else if (Pedido == "Passeio") {
+            for (let i = 0; i < passeioStatus.length; i++) {
+
+            }
+        }
 
         console.log("Dinheiro Recebido: " + dinheiroDicionario.DinheiroDia);
         resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
