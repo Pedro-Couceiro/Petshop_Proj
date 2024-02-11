@@ -14,22 +14,22 @@
 <body onload="init()">
     <nav>
         <div id="cabecalho">
-            <div class="nav-item">
+            <div id="nav-horas" class="nav-item">
                 <p> <span id="HorasSpan"></span></p>
             </div>
 
-            <div class="nav-item">
+            <div id="nav-settings" class="nav-item">
                 <p> <a href="usersettings.html"> <span id="txt_username"> </span> </a></p>
             </div>
 
-            <div class="nav-item">
+            <div id="nav-home" class="nav-item">
                 <p class="active"> Home </p>
             </div>
 
-            <div class="nav-money-hoje">
+            <div id="nav-money-hoje" class="nav-money">
                 <p><span id="dinheiroHoje"></span></p>
             </div>
-            <div class="nav-money">
+            <div id="nav-money-total" class="nav-money">
                 <p><span id="dinheiroTotal"></span></p>
             </div>
         </div>
@@ -46,7 +46,6 @@
         <div id="TimeContainer">
             <span id="gameTime"></span>
         </div>
-
         <div id="zona_jogo">
             <div id="main_zone">
                 <button id="animal_zone_button" onclick="OpenZona('Animais')">Animais</button><br>
@@ -56,80 +55,132 @@
                 <button id="passeios_zone_button" onclick="OpenZona('Passeios')">Passeios</button>
             </div>
 
-            <div id="zona_animals" class="animal_zone">
+            <div id="zona_animals">
+                <div id="dog_container" class="animal_zone">
+                    <div id="dog_header">
+                        <h1>Cães</h1>
+                    </div>
 
-                <h1>Cães</h1>
+                    <div id="dogImg_container">
+                    </div>
 
-                <div id="dogs_container">
-                </div>
+                    <div id="dog_quant">
+                        <p>Quantidade Total: <span id="quantAnimal-Cao"></span> </p>
+                    </div>
 
-                <div id="dog_quant">
-                    <p>Quantidade Total: <span id="quantAnimal-Cao"></span> </p>
-                </div>
-
-                <div id="dog_buttons">
-                    <button id="add_dog" onclick="purchaseAnimal('Cao')">Addicionar Cão</button>
-                    <button id="get_dog" onclick="getAnimal('Cao')">Buscar Cão</button>
-                    <button id="feed_dog" onclick="feedAnimal('Cao')">Alimentar Cão</button>
-                </div>
-
-
-                <h1>Gatos</h1>
-                <div id="cats_container">
+                    <div id="dog_buttons">
+                        <button id="add_dog" onclick="purchaseAnimal('Cao')">Addicionar Cão</button>
+                        <button id="get_dog" onclick="getAnimal('Cao')">Buscar Cão</button>
+                        <button id="feed_dog" onclick="feedAnimal('Cao')">Alimentar Cão</button>
+                    </div>
 
                 </div>
-                <div>
-                    <p>Quantidade Total: <span id="quantAnimal-Gato"></span></p>
-                </div>
-                <div id="cat_buttons">
-                    <button id="add_cat" onclick="purchaseAnimal('Gato')">Addicionar Cato</button>
-                    <button id="get_cat" onclick="getAnimal('Gato')">Buscar Gato</button>
-                    <button id="feed_cat" onclick="feedAnimal('Gato')">Alimentar Gato</button>
+
+                <div id="cat_container" class="animal_zone">
+                    <div id="cat_header">
+                        <h1>Gatos</h1>
+                    </div>
+                    <div id="catsImg_container">
+                    </div>
+                    <div>
+                        <p>Quantidade Total: <span id="quantAnimal-Gato"></span></p>
+                    </div>
+                    <div id="cat_buttons">
+                        <button id="add_cat" onclick="purchaseAnimal('Gato')">Addicionar Cato</button>
+                        <button id="get_cat" onclick="getAnimal('Gato')">Buscar Gato</button>
+                        <button id="feed_cat" onclick="feedAnimal('Gato')">Alimentar Gato</button>
+                    </div>
                 </div>
 
-                <h1>Pássaro</h1>
-                <div id="birds_container">
+                <div id="passaro_container" class="animal_zone">
+                    <div id="bird_header">
+                        <h1>Pássaro</h1>
+                    </div>
+                    <div id="birdsImg_container">
 
-                </div>
-                <div>
-                    <p>Quantidade Total: <span id="quantAnimal-Passaro"></span></p>
-                </div>
-                <div>
-                    <button id="add_cat" onclick="purchaseAnimal('Passaro')">Addicionar Pássaro</button>
-                    <button id="get_bird" onclick="getAnimal('Passaro')">Buscar Pássaro</button>
-                    <button id="feed_bird" onclick="feedAnimal('Passaro')">Alimentar Pássaro</button>
+                    </div>
+                    <div>
+                        <p>Quantidade Total: <span id="quantAnimal-Passaro"></span></p>
+                    </div>
+                    <div>
+                        <button id="add_cat" onclick="purchaseAnimal('Passaro')">Addicionar Pássaro</button>
+                        <button id="get_bird" onclick="getAnimal('Passaro')">Buscar Pássaro</button>
+                        <button id="feed_bird" onclick="feedAnimal('Passaro')">Alimentar Pássaro</button>
+                    </div>
                 </div>
             </div>
 
             <div id="zona_balcao">
                 <button onclick="pedidoBalcao()"> <img src="./images/balcao.png"></button>
             </div>
-            <div id="zona_alimentacao" class="alimentation_zone">
 
-                <h1>Comida de Cão</h1>
-                <img src="./images/RacaoCaoImg.png">
-                <p>Quantidade: <span id="quantComida-Cao"></span></p>
-                <button onclick="purchaseRacao('Cao')">Encomendar</button>
-                <button onclick="getRacao('Cao')">Buscar</button>
-                <br><br>
-                <h1>Comida de Gato</h1>
-                <img src="./images/RacaoGatoImg.png">
-                <p>Quantidade: <span id="quantComida-Gato"></span></p>
-                <button onclick="purchaseRacao('Gato')">Encomendar</button>
-                <button onclick="getRacao('Gato')">Buscar</button>
-                <br><br>
-                <h1>Comida de Passaro</h1>
-                <img src="./images/RacaoPassaroImg.png">
-                <p>Quantidade: <span id="quantComida-Passaro"></span></p>
-                <button onclick="purchaseRacao('Passaro')">Encomendar</button>
-                <button onclick="getRacao('Passaro')">Buscar</button>
-                <br><br>
+            <div id="zona_alimentacao">
+                <div id="dogfood_container" class="alimentation_zone">
+                    <h1>Comida de Cão</h1>
+                    <div class="foodimg_container">
+                        <img src="./images/RacaoCaoImg.png">
+                    </div>
+                    <img class="food_shelf" />
+
+                    <div class="quantfood_container">
+                        <p>Quantidade: <span id="quantComida-Cao"></span></p>
+                    </div>
+                    <div class="food_buttons">
+                        <button onclick="purchaseRacao('Cao')">Encomendar</button>
+                        <button onclick="getRacao('Cao')">Buscar</button>
+                    </div>
+                </div>
+
+                <div id="catfood_container" class="alimentation_zone">
+                    <h1>Comida de Gato</h1>
+                    <div class="foodimg_container">
+                        <img src="./images/RacaoGatoImg.png">
+                    </div>
+                    <img class="food_shelf" />
+
+                    <div class="quantfood_container">
+                        <p>Quantidade: <span id="quantComida-Gato"></span></p>
+                    </div>
+                    <div class="food_buttons">
+                        <button onclick="purchaseRacao('Gato')">Encomendar</button>
+                        <button onclick="getRacao('Gato')">Buscar</button>
+                    </div>
+                </div>
+
+                <div id="birdfood_container" class="alimentation_zone">
+                    <h1>Comida de Passaro</h1>
+                    <div class="foodimg_container">
+                        <img src="./images/RacaoPassaroImg.png">
+                    </div>
+                    <img class="food_shelf" />
+
+                    <div class="quantfood_container">
+                        <p>Quantidade: <span id="quantComida-Passaro"></span></p>
+                    </div>
+
+                    <div class="food_buttons">
+                        <button onclick="purchaseRacao('Passaro')">Encomendar</button>
+                        <button onclick="getRacao('Passaro')">Buscar</button>
+                    </div>
+                </div>
             </div>
 
             <div id="zona_tosquias">
                 <div id="tosquias_container">
+                    <h1>Tosquias</h1>
+                    <div id="tosquias_tablecontainer">
+                    </div>
                 </div>
                 <div id="banhos_container">
+                    <h1>Banhos</h1>
+                    <div id="banhos_tablecontainer"></div>
+                </div>
+            </div>
+
+            <div id="zona_passeios">
+                <div id="passeios_container">
+                    <h1>Passeios</h1>
+                    <div id="passeios_tablecontainer"></div>
                 </div>
             </div>
 
