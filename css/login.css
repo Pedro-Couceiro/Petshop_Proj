@@ -1,161 +1,184 @@
-html
-{
-    font-family:Verdana;
+html {
+    font-family: Verdana;
 }
 
-body
-{
+body {
     background-image: url('../images/paw-background.jpg');
-    background-size:cover;
-    background-repeat:no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-header h1
-{
-    text-align:center;
-    color:white;
+header h1 {
+    text-align: center;
+    color: white;
 }
 
-img
-{
+img {
     display: flex;
     align-self: center;
-    height:275px;
+    height: 275px;
 }
 
-#cabecalho
-{   
-    display:flex;
-    flex-direction:row;    
+#cabecalho {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
-.nav-item
-{
+.nav-item {
     text-align: center;
     background-color: white;
-    color:black;
-    padding-left:10px;
-    padding-right:10px;
-    margin-top:10px;
-    margin-left: 10px;
-    margin-right:20px;
-    border:1px solid black;
+    color: black;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border: 1px solid black;
 }
 
-.nav-item a
-{
-    color:cadetblue;
-    text-decoration:none;
+.nav-item a {
+    color: cadetblue;
+    text-decoration: none;
 }
 
-.nav-item a:hover
-{
-    color:cadetblue;
-    font-weight:bold;
+.nav-item a:hover {
+    color: cadetblue;
+    font-weight: bold;
 }
 
-.active
-{
-    color:cadetblue;
-    font-weight:bold;
+.active {
+    color: cadetblue;
+    font-weight: bold;
 }
 
-section 
-{
-    display:flex;
+section {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color:white;
+    color: white;
 }
 
-#container
-{
+#image-container {
+    border: 1px solid black;
+}
+
+#container {
     background: #81D8D0;
-    border:2px solid black;
-    border-radius:12px;
-    width:300px;
-    margin-top:25px;
-    margin-bottom:25px;
-    padding-top:20px;
+    border: 2px solid black;
+    width: 300px;
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
-form div 
-{
-    border:1px solid black;
+.inputdiv {
+    border: 1px solid black;
 }
 
-#btn_login, #btn_change
-{
-    padding:12px 28px;    
-    font-weight:bold;
-    background-color:#04AA6D;
-    color:white;
+#username-container, #password-container {
+    border-top: 1px solid black;
+    border-right: none;
+    border-left: none;
 }
 
-footer
-{
-    display:flex;
+.button-div {    
+    border: 1px solid black;
+    border-right: none;
+    border-left: none;
+    border-bottom:none;
+}
+
+#btn_login,
+#btn_change {
+    border: none;
+    padding: 12px 28px;
+    display: inline-block;
+    font-weight: bold;
+    background-color: #04AA6D;
+    color: white;
+}
+
+footer {
+    display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    color:white;   
+    color: white;
 }
 
 @media screen and (min-width: 576px) {
- 
-    #container
-    {
-        padding:10px;
-        width:700px;
-        display:flex;
+    #container {
+        border: 1px solid black;
+        padding: 10px;
+        width: 700px;
+        display: flex;
         flex-direction: row;
     }
 
-    #image-container
-    {
-        width:50%;
-        display:flex;
+    #image-container {
+        width: 55%;
+        display: flex;
         justify-content: center;
-        align-content:center;
-        border:1px solid black;
-        margin-right:20px; 
-    }
+        align-content: flex-start;
+        border: 1px solid black;
+        margin-right: 20px;
+    }   
 
-    form div 
-    {
-        width:90%;
-        margin-bottom:15px;
-        margin-top:4px;
-        display:flex;
-        flex-direction:column;
+    .inputdiv {
+        width: 90%;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
         padding-right: 15px;
-        padding-left:15px;
+        padding-left: 15px;
     }
 
-    form div p
-    {
-        font-size:large;
+    #username-container, #password-container {
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+    }
+ 
+    #button-div {
+        display: flex;
+        justify-self: flex-start;
+        border-top:none;
     }
 
-    #txt_nome, #txt_pass
-    {
-        width:195px;
+    form div p {
+        font-size: large;
     }
 
-    #btn_login, #btn_change
-    {
-        padding:20px 120px;    
-        font-weight:bold;
-        background-color:#04AA6D;
-        color:white;
+    #txt_nome,
+    #txt_pass {
+        width: 195px;
     }
 
-    .nav-item
+    #btn_login
     {
-        padding-left:100px;
-        padding-right:100px;
-        margin:10px;
+        padding: 20px 110px;
+        margin-top: -17px;
+        margin-bottom: -34px;
+    }
+
+    #btn_change
+    {
+        padding:20px 110px;
+        margin-top:-20px;
+        margin-bottom:-22px;
+    }
+
+    #btn_login,
+    #btn_change {
+        font-weight: bold;
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    .nav-item {
+        padding-left: 80px;
+        padding-right: 80px;
+        margin: 10px;
     }
 }

@@ -41,10 +41,12 @@ function login()
         console.log("login successful");
         //Redirecionar para outra pagina
         form.action = "home.html";
+        return true;
     }
     else 
     {
         alert("Username ou Password incorreta");
+        return false;
     }
     
 }

@@ -34,7 +34,14 @@ body {
     text-align: center;
     padding-left: 15px;
     padding-right: 15px;
-    margin-right: 20px;
+    margin-right: 10px;
+}
+
+#nav-plot
+{
+    text-align: center;
+    padding-left:15px;
+    padding-right:15px;
 }
 
 .nav-item {
@@ -42,6 +49,7 @@ body {
     display: flex;
     justify-content: center;
     align-self: center;
+    flex-wrap:flex;
     background-color: white;
     color: black;
     border: 1px solid black;
@@ -75,6 +83,7 @@ body {
 .nav-money {
     justify-content: center;
     align-self: center;
+    flex-wrap: wrap;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -113,6 +122,16 @@ header {
     padding-top: 20px;
 }
 
+#zona_beforejogo
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    border: 1px solid black;
+    padding-top: 20px;
+}
+
 #main_zone {
     display: flex;
     flex-direction: row;
@@ -120,14 +139,66 @@ header {
     flex-wrap: wrap;
 }
 
-#main_zone button {
+.zone_button
+{
+    border:none;
     margin-right: 8px;
     margin-left: 5px;
     margin-bottom: 15px;
     padding: 10px 13px;
-    font-weight: bold;
     display: inline-block;
-    text-decoration: none;
+    background-color: teal;
+    color:white;
+}
+
+.zone_button:hover
+{
+    font-weight: bold;
+}
+
+.food_buttons
+{
+    border:none;
+    padding: 10px 13px;
+    background-color: teal;
+    margin-left:10px;
+    margin-right: 10px;
+    margin-top:10px;
+    color: white;
+}
+
+.food_buttons:hover
+{
+    font-weight: bold;
+}
+
+.animal_buttons
+{
+    border:none;
+    padding:10px 13px;
+    background-color: teal;
+    margin-right:10px;
+    margin-top:10px;
+    color:white;
+}
+
+.animal_buttons:hover
+{
+    font-weight:bold;
+}
+
+.table_buttons
+{
+    border:none;
+    padding:10px 13px;
+    background-color: teal;
+    margin-left:5px;
+    color:white;
+}
+
+.table_buttons:hover
+{
+    font-weight:bold;
 }
 
 #zona_balcao {
@@ -137,6 +208,8 @@ header {
 }
 
 #zona_balcao button {
+    border:none;
+    background-color: #ffffff;
     height: 200px;
     width: 200px;
 }
@@ -148,7 +221,26 @@ header {
 }
 
 .animal_zone {
-    padding: 10px;
+    padding: 20px;
+}
+
+.PetImage {
+    width: 30%;
+    height: 30%;
+}
+
+.barhunger_container
+{
+    height:24px;
+    width:300px;
+    margin-bottom:30px;
+    background-color: gray;
+}
+
+#hungerbar_Cao, #hungerbar_Gato, #hungerbar_Passaro
+{
+    height:24px;
+    width:300px;
 }
 
 #zona_alimentacao {
@@ -231,39 +323,68 @@ header {
     margin-right: 5px;
 }
 
+#passeios_container
+{
+    padding-left:20px;
+    margin-bottom:20px;
+}
+
+.no_border
+{
+    border: none;
+    background-color: #ffffff;
+}
+
 table {
     border-collapse: collapse;
     margin-bottom: 10px;
+    vertical-align: center;
 }
 
 table tr th {
     border: 1px solid black;
-    padding: 5px;
+    padding-left:8px;
+    padding-right:8px;
+    background-color: black;
+    color:white;
 }
 
 table tr td {
     border: 1px solid black;
     text-align: center;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:5px;
+    padding-right:5px;
 }
 
-@media screen and (min-width:379px) {
+@media screen and (min-width:500px) {
     .nav-item {
+        display: flex;
+        flex-wrap: wrap;
         padding-left: 20px;
         padding-right: 20px;
+    }
 
+    .nav-money
+    {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top:10px;
+        margin-right:0px;
+        padding-left:20px;
     }
 
     #nav-money-hoje {
-        margin-right: 10px;
         padding-left: 20px;
         padding-right: 20px;
-
+        margin-top:-10px;
     }
 
     #nav-money-total {
         padding-left: 20px;
         padding-right: 20px;
-        margin-top: 9px;
+        margin-top:-10px;
     }
 }
 
@@ -302,6 +423,7 @@ table tr td {
         padding-left: 30px;
         padding-right: 30px;
         margin-left: auto;
+        margin-top:0px;
     }
 
     #nav-money-total {
@@ -309,6 +431,7 @@ table tr td {
         border: 1px solid black;
         padding-left: 30px;
         padding-right: 30px;
+        margin-top:0px;
     }
 
     #cabecalho {
@@ -336,18 +459,24 @@ table tr td {
     }
 
     #nav-horas {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     #nav-settings {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     #nav-home {
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #nav-plot
+    {
+        padding-left:30px;
+        padding-right:30px;
     }
 
     .nav-money {
@@ -393,6 +522,20 @@ table tr td {
         height: 240px;
     }
 
+    table tr th {
+        padding-left:10px;
+        padding-right:10px;
+        padding-top:15px;
+        padding-bottom:15px;
+    }
+    
+    table tr td {
+        padding-top:10px;
+        padding-bottom:10px;
+        padding-left:15px;
+        padding-right:15px;
+    }
+
     #zona_pedidos img {
         width: 50%;
         height: 50%;
@@ -404,11 +547,3 @@ table tr td {
     }
 }
 
-#DogImg,
-#CatImg,
-#BirdImg {
-
-    width: 30%;
-    height: 30%;
-
-}
