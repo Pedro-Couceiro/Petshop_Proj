@@ -14,20 +14,58 @@ header h1 {
     color:black;
 }
 
+section 
+{
+    text-align: center;
+    background-color: white;
+    border:1px solid black;   
+}
+
+p
+{
+    color:black;
+}
+
 #cabecalho {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
+#nav-horas {
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right: 10px;
+}
+
+#nav-settings {
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right: 10px;
+}
+
+#nav-home {
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right: 10px;
+}
+
+#nav-plot
+{
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
 .nav-item {
     text-align: center;
     background-color: white;
     color: black;
-    padding-left: 25px;
-    padding-right: 25px;
     margin-top: 10px;
-    margin-left: 20px;
+    margin-bottom:10px;
     border: 1px solid black;
 }
 
@@ -55,17 +93,40 @@ section {
     color: white;
 }
 
-footer {
+footer p {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-end;
     color: white;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width:1024px) {
     .nav-item {
         padding-left: 80px;
         padding-right: 80px;
-        margin: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 20px;    
+    }
+
+    #nav-horas {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    #nav-settings {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    #nav-home {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    #nav-plot
+    {
+        padding-left:80px;
+        padding-right:80px;
     }
 }

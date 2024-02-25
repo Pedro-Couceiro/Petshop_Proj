@@ -99,9 +99,9 @@ section {
     color: white;
 }
 
-footer {
+footer p {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-end;
     color: white;
 }

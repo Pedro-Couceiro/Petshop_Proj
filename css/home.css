@@ -93,9 +93,10 @@ body {
     font-weight: bold;
 }
 
-footer {
+footer p {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    align-content: flex-end;
     color: white;
 }
 
