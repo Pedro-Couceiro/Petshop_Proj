@@ -21,19 +21,19 @@ let passeioStatus = []
 
 let pedido =
     [
-        { "PedidoID": 1, "TipoPedido": "Racao", "TipoAnimal": "Cao", "Imagem": "RacaoCaoImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 2, "TipoPedido": "Racao", "TipoAnimal": "Gato", "Imagem": "RacaoGatoImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 3, "TipoPedido": "Racao", "TipoAnimal": "Passaro", "Imagem": "RacaoPassaroImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 4, "TipoPedido": "Adotar", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 5, "TipoPedido": "Adotar", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 6, "TipoPedido": "Adotar", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 7, "TipoPedido": "Tosquia", "TipoAnimal": "Cao", "Imagem": "TosquiarImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 8, "TipoPedido": "Tosquia", "TipoAnimal": "Gato", "Imagem": "TosquiarImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 9, "TipoPedido": "Tosquia", "TipoAnimal": "Passaro", "Imagem": "TosquiarImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 10, "TipoPedido": "Banho", "TipoAnimal": "Cao", "Imagem": "BanhoImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 11, "TipoPedido": "Banho", "TipoAnimal": "Gato", "Imagem": "BanhoImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 12, "TipoPedido": "Banho", "TipoAnimal": "Passaro", "Imagem": "BanhoImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 13, "TipoPedido": "Passeio", "TipoAnimal": "Cao", "Imagem": "PasseioImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 1, "TipoPedido": "Racao", "TipoAnimal": "Cao", "Imagem": "RacaoCaoImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 2, "TipoPedido": "Racao", "TipoAnimal": "Gato", "Imagem": "RacaoGatoImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 3, "TipoPedido": "Racao", "TipoAnimal": "Passaro", "Imagem": "RacaoPassaroImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 4, "TipoPedido": "Adotar", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 5, "TipoPedido": "Adotar", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 6, "TipoPedido": "Adotar", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 7, "TipoPedido": "Tosquia", "TipoAnimal": "Cao", "Imagem": "TosquiarImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 8, "TipoPedido": "Tosquia", "TipoAnimal": "Gato", "Imagem": "TosquiarImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 9, "TipoPedido": "Tosquia", "TipoAnimal": "Passaro", "Imagem": "TosquiarImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 10, "TipoPedido": "Banho", "TipoAnimal": "Cao", "Imagem": "BanhoImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 11, "TipoPedido": "Banho", "TipoAnimal": "Gato", "Imagem": "BanhoImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 12, "TipoPedido": "Banho", "TipoAnimal": "Passaro", "Imagem": "BanhoImg", "Tempo": 30, "Dinheiro": 70 },
+        { "PedidoID": 13, "TipoPedido": "Passeio", "TipoAnimal": "Cao", "Imagem": "PasseioImg", "Tempo": 30, "Dinheiro": 70 },
     ]
 
 let inventory =
@@ -753,7 +753,7 @@ function pedidoBalcao() {
                             "tosquiaNum": a,
                             "tosquiaId": "pedido" + a,
                             "Tipo": pedido[i].TipoAnimal,
-                            "TaskTime": 60,
+                            "TaskTime": 30,
                             "Dinheiro": 100,
                             "IsComplete": false,
                         }
@@ -767,7 +767,7 @@ function pedidoBalcao() {
                             "banhoNum": a,
                             "banhoId": "pedido" + a,
                             "Tipo": pedido[i].TipoAnimal,
-                            "TaskTime": 60,
+                            "TaskTime": 30,
                             "Dinheiro": 100,
                             "IsComplete": false,
                         }
@@ -781,7 +781,7 @@ function pedidoBalcao() {
                             "passeioNum": a,
                             "passeioId": "pedido" + a,
                             "Tipo": pedido[i].TipoAnimal,
-                            "TaskTime": 60,
+                            "TaskTime": 30,
                             "Dinheiro": 100,
                             "IsComplete": false,
                         }
