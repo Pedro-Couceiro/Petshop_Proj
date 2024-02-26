@@ -1,16 +1,16 @@
 //Dictionary Variables
 let animallist =
     [
-        { "Tipo": "Gato", "Quantidade": 10, "Dinheiro": 150, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
-        { "Tipo": "Cao", "Quantidade": 10, "Dinheiro": 150, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
-        { "Tipo": "Passaro", "Quantidade": 10, "Dinheiro": 150, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
+        { "Tipo": "Gato", "Quantidade": 1, "Dinheiro": 100, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
+        { "Tipo": "Cao", "Quantidade": 1, "Dinheiro": 100, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
+        { "Tipo": "Passaro", "Quantidade": 1, "Dinheiro": 100, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
     ]
 
 let racaolist =
     [
-        { "Tipo": "Gato", "Quantidade": 10, "Dinheiro": 30, "TaskTime": 30, "Check": true },
-        { "Tipo": "Cao", "Quantidade": 10, "Dinheiro": 30, "TaskTime": 30, "Check": true },
-        { "Tipo": "Passaro", "Quantidade": 10, "Dinheiro": 30, "TaskTime": 30, "Check": true },
+        { "Tipo": "Gato", "Quantidade": 10, "Dinheiro": 40, "TaskTime": 30, "Check": true },
+        { "Tipo": "Cao", "Quantidade": 10, "Dinheiro": 40, "TaskTime": 30, "Check": true },
+        { "Tipo": "Passaro", "Quantidade": 10, "Dinheiro": 40, "TaskTime": 30, "Check": true },
     ]
 
 let tosquiaStatus = []
@@ -21,29 +21,29 @@ let passeioStatus = []
 
 let pedido =
     [
-        { "PedidoID": 1, "TipoPedido": "Racao", "TipoAnimal": "Cao", "Imagem": "RacaoCaoImg", "Tempo": 60, "Dinheiro": 30 },
-        { "PedidoID": 2, "TipoPedido": "Racao", "TipoAnimal": "Gato", "Imagem": "RacaoGatoImg", "Tempo": 60, "Dinheiro": 30 },
-        { "PedidoID": 3, "TipoPedido": "Racao", "TipoAnimal": "Passaro", "Imagem": "RacaoPassaroImg", "Tempo": 60, "Dinheiro": 30 },
-        { "PedidoID": 4, "TipoPedido": "Adotar", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 150 },
-        { "PedidoID": 5, "TipoPedido": "Adotar", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 60, "Dinheiro": 150 },
-        { "PedidoID": 6, "TipoPedido": "Adotar", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 60, "Dinheiro": 150 },
-        { "PedidoID": 7, "TipoPedido": "Tosquia", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 8, "TipoPedido": "Tosquia", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 9, "TipoPedido": "Tosquia", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 10, "TipoPedido": "Banho", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 11, "TipoPedido": "Banho", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 12, "TipoPedido": "Banho", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 60, "Dinheiro": 70 },
-        { "PedidoID": 13, "TipoPedido": "Passeio", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 1, "TipoPedido": "Racao", "TipoAnimal": "Cao", "Imagem": "RacaoCaoImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 2, "TipoPedido": "Racao", "TipoAnimal": "Gato", "Imagem": "RacaoGatoImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 3, "TipoPedido": "Racao", "TipoAnimal": "Passaro", "Imagem": "RacaoPassaroImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 4, "TipoPedido": "Adotar", "TipoAnimal": "Cao", "Imagem": "DogImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 5, "TipoPedido": "Adotar", "TipoAnimal": "Gato", "Imagem": "CatImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 6, "TipoPedido": "Adotar", "TipoAnimal": "Passaro", "Imagem": "BirdImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 7, "TipoPedido": "Tosquia", "TipoAnimal": "Cao", "Imagem": "TosquiarImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 8, "TipoPedido": "Tosquia", "TipoAnimal": "Gato", "Imagem": "TosquiarImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 9, "TipoPedido": "Tosquia", "TipoAnimal": "Passaro", "Imagem": "TosquiarImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 10, "TipoPedido": "Banho", "TipoAnimal": "Cao", "Imagem": "BanhoImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 11, "TipoPedido": "Banho", "TipoAnimal": "Gato", "Imagem": "BanhoImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 12, "TipoPedido": "Banho", "TipoAnimal": "Passaro", "Imagem": "BanhoImg", "Tempo": 60, "Dinheiro": 70 },
+        { "PedidoID": 13, "TipoPedido": "Passeio", "TipoAnimal": "Cao", "Imagem": "PasseioImg", "Tempo": 60, "Dinheiro": 70 },
     ]
 
 let inventory =
     [
-        { "Tipo": "Adotar", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
-        { "Tipo": "Adotar", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
-        { "Tipo": "Adotar", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 150, "HasCheck": false },
-        { "Tipo": "Racao", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 30, "HasCheck": false },
-        { "Tipo": "Racao", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 30, "HasCheck": false },
-        { "Tipo": "Racao", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 30, "HasCheck": false },
+        { "Tipo": "Adotar", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
+        { "Tipo": "Adotar", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
+        { "Tipo": "Adotar", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
+        { "Tipo": "Racao", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
+        { "Tipo": "Racao", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
+        { "Tipo": "Racao", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
     ]
 
 let resultsdia = { "DinheiroDia": 0, "DinheiroTotal": 0 }
@@ -399,36 +399,45 @@ function AnimalFome() {
                     clearInterval(timer);
                 }
                 else {
-                    animallist[i].Hungy -= 1;
+                    if(animallist[i].Check == true)
+                    {
+                        animallist[i].Hungy -= 1;
 
-                    let hungerbar = document.getElementById("hungerbar_" + animallist[i].Tipo);
-                    let hungerperc = document.getElementById("percent_" + animallist[i].Tipo);
-
-                    if (animallist[i].Hungy >= 100) {
-                        animallist[i].Hungy = 100;
+                        let hungerbar = document.getElementById("hungerbar_" + animallist[i].Tipo);
+                        let hungerperc = document.getElementById("percent_" + animallist[i].Tipo);
+    
+                        if (animallist[i].Hungy >= 100) {
+                            animallist[i].Hungy = 100;
+                        }
+    
+                        if (animallist[i].Hungy === 0) {
+                            alert("Um dos teus " + animallist[i].Tipo + " adoeçeu por causa de fome. Foi Mandado para o hospital. A gerenciâ está infeliz, por isso vai te custar.");
+    
+                            animallist[i].Quantidade = animallist[i].Quantidade - 1;
+    
+                            dinheiroDicionario.DinheiroDia = parseInt(dinheiroDicionario.DinheiroDia) - racaolist[i].Dinheiro;
+    
+                            resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
+    
+                            let dinheiroProfile = JSON.stringify(resultsdia);
+    
+                            localStorage.setItem("Dinheiro", dinheiroProfile);
+                            getMoneyLocal();
+    
+                            animallist[i].Hungy = 100;
+    
+                            checkQuantities();
+                        }
+                        hungerbar.style.width = animallist[i].Hungy + '%';
+                        hungerperc.textContent = animallist[i].Hungy + "%";
                     }
-
-                    if (animallist[i].Hungy === 0) {
-                        alert("Um dos teus " + animallist[i].Tipo + " adoeçeu por causa de fome. Foi Mandado para o hospital. A gerenciâ está infeliz, por isso vai te custar.");
-
-                        animallist[i].Quantidade = animallist[i].Quantidade - 1;
-
-                        dinheiroDicionario.DinheiroDia = parseInt(dinheiroDicionario.DinheiroDia) - racaolist[i].Dinheiro;
-
-                        resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
-
-                        let dinheiroProfile = JSON.stringify(resultsdia);
-
-                        localStorage.setItem("Dinheiro", dinheiroProfile);
-                        getMoneyLocal();
-
-                        animallist[i].Hungy = 100;
-
-                        checkQuantities();
+                    else
+                    {
+                        animal[i].Hungy = 100;
+                        clearInterval(timer);
                     }
-                    hungerbar.style.width = animallist[i].Hungy + '%';
-                    hungerperc.textContent = animallist[i].Hungy + "%";
                 }
+                    
             }, 1000)
     }
 }
@@ -696,6 +705,7 @@ function pedidoBalcao() {
                 let imgPedido = document.createElement("img");
                 imgPedido.setAttribute("src", "./images/" + pedido[i].Imagem + ".png");
                 imgPedido.setAttribute("alt", pedido[i].Imagem);
+                imgPedido.setAttribute("class", pedido[i].TipoPedido);
 
                 let numContainer = document.createElement("div");
                 numContainer.setAttribute("id", "numContainer" + a);

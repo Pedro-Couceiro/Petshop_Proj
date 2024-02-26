@@ -34,7 +34,6 @@ body {
     text-align: center;
     padding-left: 15px;
     padding-right: 15px;
-    margin-right: 10px;
 }
 
 #nav-plot
@@ -42,6 +41,7 @@ body {
     text-align: center;
     padding-left:15px;
     padding-right:15px;
+    margin-right: 10px;
 }
 
 .nav-item {
@@ -298,12 +298,38 @@ header {
     height: 45%;
     width: 35%;
     margin-left: 5px;
+    margin-right: 5px;
     margin-bottom: 10px;
 }
 
-#zona_pedidos img {
+.Racao
+{
     width: 50%;
     height: 50%;
+}
+
+.Adotar
+{
+    width: 50%;
+    height: 50%;
+}
+
+.Tosquia
+{
+    width: 25%;
+    height: 25%;
+}
+
+.Banho
+{
+    width: 60%;
+    height: 60%;
+}
+
+.Passeio
+{
+    width: 60%;
+    height: 60%;
 }
 
 .pedido_container div {
@@ -440,11 +466,6 @@ table tr td {
         margin-bottom: 30px;
     }
 
-    #zona_pedidos img {
-        width: 75%;
-        height: 75%;
-    }
-
     .pedido_container {
         height: 50%;
         width: 15%;
@@ -456,7 +477,7 @@ table tr td {
         font-size: medium;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-right: 40px;
+        margin-right: 10px;
     }
 
     #nav-horas {
@@ -470,8 +491,8 @@ table tr td {
     }
 
     #nav-home {
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
 
     #nav-plot
@@ -537,14 +558,8 @@ table tr td {
         padding-right:15px;
     }
 
-    #zona_pedidos img {
-        width: 50%;
-        height: 50%;
-    }
-
     .pedido_container {
         height: 40%;
         width: 15%;
     }
 }
-

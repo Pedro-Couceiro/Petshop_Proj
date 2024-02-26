@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title>Loja</Title>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/gamescript.js"></script>
+</head>
+
+<body onload="init()">
+    <nav>
+        <div id="cabecalho">
+            <div id="nav-horas" class="nav-item">
+                <p> <span id="HorasSpan"></span></p>
+            </div>
+
+            <div id="nav-settings" class="nav-item">
+                <p> <a href="usersettings.html"> <span id="txt_username"> </span> </a></p>
+            </div>
+
+            <div id="nav-plot" class="nav-item">
+                <p> <a href="home.html"> Home </a></p>
+            </div>
+
+            <div id="nav-home" class="nav-item">
+                <p class="active"> Loja </p>
+            </div>
+
+            <div id="nav-money-hoje" class="nav-money">
+                <p><span id="dinheiroHoje"></span></p>
+            </div>
+            <div id="nav-money-total" class="nav-money">
+                <p><span id="dinheiroTotal"></span></p>
+            </div>
+        </div>
+    </nav>
+
+    <section id="notjogo_section">
+        <div id="zona_beforejogo">
+            <button onclick="beginGame()" class="zone_button">Começar Novo Dia</button>
+        </div>
+    </section>
+
+    <section id="jogo_section">
+        <div id="TimeContainer">
+            <span id="gameTime"></span>
+        </div>
+        <div id="zona_jogo">
+            <div id="main_zone">
+                <button id="animal_zone_button" onclick="OpenZona('Animais')" class="zone_button">Animais</button><br>
+                <button id="balcao_zone_button" onclick="OpenZona('Balcao')" class="zone_button">Balcao</button><br>
+                <button id="alimentation_zone_button" onclick="OpenZona('Alimentacao')"
+                    class="zone_button">Alimentacao</button> <br>
+                <button id="baths_zone_button" onclick="OpenZona('Tosquias')" class="zone_button">Banho e
+                    Tosquias</button><br>
+                <button id="passeios_zone_button" onclick="OpenZona('Passeios')" class="zone_button">Passeios</button>
+            </div>
+
+            <div id="zona_animals">
+                <div id="dog_container" class="animal_zone">
+                    <div id="dog_header" class="animal_container">
+                        <h1>Cães</h1>
+                    </div>
+
+                    <div class="animal_container">
+                        <p>Quantidade Total: <span id="quantAnimal-Cao"></span> </p>
+                    </div>
+
+                    <div id="dogImg_container" class="animal_container">
+                        <img src="./images/DogImg.png" alt="Cão" class="PetImage">
+                    </div>
+
+                    <div class="hunger_container">
+                        <div>
+                            <p>Fome: </p>
+                        </div>
+                        <div class="barhunger_container">
+                            <div id="hungerbar_Cao" class="w3-green"></div>
+                            <div>
+                                <span id="percent_Cao">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="dog_buttons" class="animal_container">
+                        <button id="add_dog" onclick="purchaseAnimal('Cao')" class="animal_buttons">Addicionar Cão</button>
+                        <button id="get_dog" onclick="getAnimal('Cao')" class="animal_buttons">Buscar Cão</button>
+                        <button id="feed_dog" onclick="feedAnimal('Cao')" class="animal_buttons">Alimentar Cão</button>
+                    </div>
+
+                </div>
+
+                <div id="cat_container" class="animal_zone">
+                    <div id="cat_header" class="animal_container">
+                        <h1>Gatos</h1>
+                    </div>
+                    <div class="animal_container">
+                        <p>Quantidade Total: <span id="quantAnimal-Gato"></span></p>
+                    </div>
+
+                    <div id="catsImg_container" class="animal_container">
+                        <img src="./images/CatImg.png" alt="Gato" class="PetImage">
+                    </div>
+
+                    <div class="hunger_container">
+                        <div>
+                            <p>Fome: </p>
+                        </div>
+                        <div class="barhunger_container">
+                            <div id="hungerbar_Gato" class="w3-green"></div>
+                            <div>
+                                <span id="percent_Gato">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cat_buttons" class="animal_container">
+                        <button id="add_cat" onclick="purchaseAnimal('Gato')" class="animal_buttons">Addicionar Gato</button>
+                        <button id="get_cat" onclick="getAnimal('Gato')" class="animal_buttons">Buscar Gato</button>
+                        <button id="feed_cat" onclick="feedAnimal('Gato')" class="animal_buttons">Alimentar Gato</button>
+                    </div>
+                </div>
+
+                <div id="passaro_container" class="animal_zone">
+                    <div id="bird_header" class="animal_container">
+                        <h1>Pássaro</h1>
+                    </div>
+                    <div class="animal_container">
+                        <p>Quantidade Total: <span id="quantAnimal-Passaro"></span></p>
+                    </div>
+
+                    <div id="birdsImg_container" class="animal_container">
+                        <img src="./Images/BirdImg.png" alt="Passaro" class="PetImage">
+                    </div>
+
+                    <div class="hunger_container">
+                        <div>
+                            <p>Fome: </p>
+                        </div>
+                        <div class="barhunger_container">
+                            <div id="hungerbar_Passaro" class="w3-green">
+                            </div>
+                            <div>
+                                <span id="percent_Passaro">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animal_container">
+                        <button id="add_cat" onclick="purchaseAnimal('Passaro')" class="animal_buttons">Addicionar Pássaro</button>
+                        <button id="get_bird" onclick="getAnimal('Passaro')" class="animal_buttons">Buscar Pássaro</button>
+                        <button id="feed_bird" onclick="feedAnimal('Passaro')" class="animal_buttons">Alimentar Pássaro</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="zona_balcao">
+                <button onclick="pedidoBalcao()"> <img src="./images/balcao.png"></button>
+            </div>
+
+            <div id="zona_alimentacao">
+                <div id="dogfood_container" class="alimentation_zone">
+                    <h1>Comida de Cão</h1>
+                    <div class="foodimg_container">
+                        <img src="./images/RacaoCaoImg.png">
+                    </div>
+                    <img class="food_shelf" />
+
+                    <div class="quantfood_container">
+                        <p>Quantidade: <span id="quantComida-Cao"></span></p>
+                    </div>
+                    <div>
+                        <button onclick="purchaseRacao('Cao')" class="food_buttons">Encomendar</button>
+                        <button onclick="getRacao('Cao')" class="food_buttons">Buscar</button>
+                    </div>
+                </div>
+
+                <div id="catfood_container" class="alimentation_zone">
+                    <h1>Comida de Gato</h1>
+                    <div class="foodimg_container">
+                        <img src="./images/RacaoGatoImg.png">
+                    </div>
+                    <img class="food_shelf" />
+
+                    <div class="quantfood_container">
+                        <p>Quantidade: <span id="quantComida-Gato"></span></p>
+                    </div>
+                    <div>
+                        <button onclick="purchaseRacao('Gato')" class="food_buttons">Encomendar</button>
+                        <button onclick="getRacao('Gato')" class="food_buttons">Buscar</button>
+                    </div>
+                </div>
+
+                <div id="birdfood_container" class="alimentation_zone">
+                    <h1>Comida de Passaro</h1>
+                    <div class="foodimg_container">
+                        <img src="./images/RacaoPassaroImg.png">
+                    </div>
+                    <img class="food_shelf" />
+
+                    <div class="quantfood_container">
+                        <p>Quantidade: <span id="quantComida-Passaro"></span></p>
+                    </div>
+
+                    <div>
+                        <button onclick="purchaseRacao('Passaro')" class="food_buttons">Encomendar</button>
+                        <button onclick="getRacao('Passaro')" class="food_buttons">Buscar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="zona_tosquias">
+                <div id="tosquias_container">
+                    <h1>Tosquias</h1>
+                    <div id="tosquias_tablecontainer">
+                    </div>
+                </div>
+                <div id="banhos_container">
+                    <h1>Banhos</h1>
+                    <div id="banhos_tablecontainer"></div>
+                </div>
+            </div>
+
+            <div id="zona_passeios">
+                <div id="passeios_container">
+                    <h1>Passeios</h1>
+                    <div id="passeios_tablecontainer"></div>
+                </div>
+            </div>
+
+            <div id="zona_pedidos">
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy Jogo feito por Pedro Couceiro e </p>
+    </footer>
+    
+</html>
