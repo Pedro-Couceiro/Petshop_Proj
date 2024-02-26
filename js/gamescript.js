@@ -1,9 +1,9 @@
 //Dictionary Variables
 let animallist =
     [
-        { "Tipo": "Gato", "Quantidade": 1, "Dinheiro": 100, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
-        { "Tipo": "Cao", "Quantidade": 1, "Dinheiro": 100, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
-        { "Tipo": "Passaro", "Quantidade": 1, "Dinheiro": 100, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
+        { "Tipo": "Gato", "Quantidade": 5, "Dinheiro": 100, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
+        { "Tipo": "Cao", "Quantidade": 5, "Dinheiro": 100, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
+        { "Tipo": "Passaro", "Quantidade": 5, "Dinheiro": 100, "GetTaskTime": 30, "FeedTaskTime": 60, "Hungy": 100, "Check": true },
     ]
 
 let racaolist =
@@ -38,12 +38,12 @@ let pedido =
 
 let inventory =
     [
-        { "Tipo": "Adotar", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
-        { "Tipo": "Adotar", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
-        { "Tipo": "Adotar", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
-        { "Tipo": "Racao", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
-        { "Tipo": "Racao", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
-        { "Tipo": "Racao", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 70, "HasCheck": false },
+        { "Tipo": "Adotar", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 100, "HasCheck": false },
+        { "Tipo": "Adotar", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 100, "HasCheck": false },
+        { "Tipo": "Adotar", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 100, "HasCheck": false },
+        { "Tipo": "Racao", "TipoAnimal": "Cao", "Quantidade": 0, "Dinheiro": 100, "HasCheck": false },
+        { "Tipo": "Racao", "TipoAnimal": "Gato", "Quantidade": 0, "Dinheiro": 100, "HasCheck": false },
+        { "Tipo": "Racao", "TipoAnimal": "Passaro", "Quantidade": 0, "Dinheiro": 100, "HasCheck": false },
     ]
 
 let resultsdia = { "DinheiroDia": 0, "DinheiroTotal": 0 }
@@ -524,12 +524,12 @@ function purchaseAnimal(Animal) {
 
     for (let i = 0; i < animallist.length; i++) {
         if (Animal === animallist[i].Tipo) {
-            if (parseInt(dinheiroDicionario.DinheiroDia) - racaolist[i].Dinheiro < 0) {
+            if (parseInt(dinheiroDicionario.DinheiroDia) - animallist[i].Dinheiro < 0) {
                 alert("Não tem dinheiro suficiente para encomendar este Animal");
                 break;
             }
             else {
-                dinheiroDicionario.DinheiroDia = parseInt(dinheiroDicionario.DinheiroDia) - racaolist[i].Dinheiro;
+                dinheiroDicionario.DinheiroDia = parseInt(dinheiroDicionario.DinheiroDia) - animallist[i].Dinheiro;
                 animallist[i].Quantidade = animallist[i].Quantidade + 1;
                 if (animallist[i].Quantidade >= 1) {
                     animallist[i].Check = true;
@@ -753,8 +753,8 @@ function pedidoBalcao() {
                             "tosquiaNum": a,
                             "tosquiaId": "pedido" + a,
                             "Tipo": pedido[i].TipoAnimal,
-                            "TaskTime": 30,
-                            "Dinheiro": 70,
+                            "TaskTime": 60,
+                            "Dinheiro": 100,
                             "IsComplete": false,
                         }
                     )
@@ -767,8 +767,8 @@ function pedidoBalcao() {
                             "banhoNum": a,
                             "banhoId": "pedido" + a,
                             "Tipo": pedido[i].TipoAnimal,
-                            "TaskTime": 30,
-                            "Dinheiro": 70,
+                            "TaskTime": 60,
+                            "Dinheiro": 100,
                             "IsComplete": false,
                         }
                     )
@@ -781,8 +781,8 @@ function pedidoBalcao() {
                             "passeioNum": a,
                             "passeioId": "pedido" + a,
                             "Tipo": pedido[i].TipoAnimal,
-                            "TaskTime": 30,
-                            "Dinheiro": 70,
+                            "TaskTime": 60,
+                            "Dinheiro": 100,
                             "IsComplete": false,
                         }
                     )
