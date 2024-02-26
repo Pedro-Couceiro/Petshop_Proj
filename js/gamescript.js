@@ -61,8 +61,6 @@ let a = 0;
 
 //Função de iniciação que começa no onload,
 function init() {
-    console.log("test");
-
     getCurrentTime();
 
     getUserLocal();
@@ -196,11 +194,9 @@ function getUserLocal() {
     //Se o jogador por algum milagre n tenha entrado pelo o login 
     //Vai logo para o login screen
     if (profileLocalStorage === null) {
-        console.log("Unregistred User Detected");
         window.location.replace("loginpage.html");
     }
     else {
-        console.log("Registered user");
         let profileDicionario = JSON.parse(profileLocalStorage);
         document.getElementById("txt_username").textContent = profileDicionario.name;
     }
@@ -211,8 +207,6 @@ function getMoneyLocal() {
 
     //Se a local storage do dinheiro não existe ainda
     if (dinheiroLocalStorage === null) {
-        console.log("Novo Jogo");
-
         //JSONstrigification do dicionario resultsdia
         let dinheiroProfile = JSON.stringify(resultsdia);
 
@@ -259,8 +253,6 @@ function ShopTimer() {
             }
 
             if (countDownTime <= 0) {
-                console.log("Time's up")
-
                 clearInterval(timer);
                 document.getElementById("gameTime").textContent = "00:00 - Tempo Acabou!";
 
@@ -291,18 +283,14 @@ function pedidoTime() {
 
                         let timeSpan = document.getElementById(queuelist[i].pedidoTimeID);
 
-                        console.log(timeSpan);
-
                         //Subtrai o tempo de cada pedido
                         queuelist[i].pedidoTime--;
 
+                        //Para a span de timer dos pedidos
                         timeSpan.textContent = queuelist[i].pedidoTime;
-
-                        console.log(queuelist[i].pedidoId + ": " + queuelist[i].pedidoTime);
 
                         //Se o pedido foi completado
                         if (queuelist[i].IsComplete == true) {
-                            console.log("Abort CountDown");
                             clearInterval(timer);
 
                             zonaPedidosDiv.removeChild(currentOrder);
@@ -334,7 +322,6 @@ function pedidoTime() {
                     }
                 }
                 else {
-                    console.log("Abort CountDown");
                     clearInterval(timer);
                 }
             }, 3000)
@@ -383,8 +370,6 @@ function ApagarTableCell(tipoPedido, pedidoID) {
 //Function para gastar o tempo entre atividades
 function wasteTime(taskTime) {
     countDownTime = countDownTime - taskTime;
-
-    console.log("Tempo gastado: " + taskTime);
 }
 
 //Function para contar a fome dos animais no jogo
@@ -442,9 +427,6 @@ function AnimalFome() {
     }
 }
 
-
-
-
 function purchaseRacao(TipoRacao) {
     let i;
     let dinheiroLocalStorage = localStorage.getItem("Dinheiro");
@@ -452,6 +434,7 @@ function purchaseRacao(TipoRacao) {
 
     for (i = 0; i < racaolist.length; i++) {
         if (TipoRacao === racaolist[i].Tipo) {
+            //Se a subtracao for menor que zero...
             if (parseInt(dinheiroDicionario.DinheiroDia) - racaolist[i].Dinheiro < 0) {
                 alert("Não tem dinheiro suficiente para encomendar esta Ração");
                 break;
@@ -466,8 +449,6 @@ function purchaseRacao(TipoRacao) {
             }
         }
     }
-    console.log("Tens " + racaolist[i].Quantidade + " de racao de " + racaolist[i].Tipo);
-
     resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
     let dinheiroProfile = JSON.stringify(resultsdia);
 
@@ -498,8 +479,6 @@ function getRacao(RacaoItem) {
             break;
         }
     }
-    console.log("Tens " + inventory[i].Quantidade + " de racao de " + inventory[i].Nome);
-
     checkQuantities();
 }
 
@@ -574,7 +553,6 @@ function getAnimal(Animal) {
             break;
         }
     }
-    console.log("Tens " + inventory[i].Quantidade + " " + inventory[i].TipoAnimal);
 
     checkQuantities();
 }
@@ -588,7 +566,6 @@ function tosquiarAnimal(numId) {
                 tosquiaStatus[i].IsComplete = true;
 
                 wasteTime(tosquiaStatus[i].TaskTime);
-                console.log("Gastou " + tosquiaStatus[i].TaskTime);
                 alert("O animal foi tosqueado!");
 
                 break;
@@ -609,7 +586,6 @@ function lavarAnimal(numId) {
 
                 wasteTime(banhoStatus[i].TaskTime);
 
-                console.log("Gastou " + banhoStatus[i].TaskTime);
                 alert("O animal foi lavado!");
 
                 break;
@@ -668,7 +644,6 @@ function animalFed(Animal) {
     for (let b = 0; b < animallist.length; b++) {
         if (Animal === animallist[b].Tipo) {
             wasteTime(animallist[b].FeedTaskTime);
-            console.log("Sucessful feeding");
 
             animallist[b].Hungy = animallist[b].Hungy + 50;
 
@@ -1201,8 +1176,6 @@ function giveOrder(PedidoID, Pedido, Animal) {
                 }
             }
         }
-
-        console.log("Dinheiro Recebido: " + dinheiroDicionario.DinheiroDia);
         resultsdia.DinheiroDia = dinheiroDicionario.DinheiroDia;
 
         let dinheiroProfile = JSON.stringify(resultsdia);
